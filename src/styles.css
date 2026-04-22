@@ -1,0 +1,171 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-gold: var(--gold);
+  --color-gold-deep: var(--gold-deep);
+  --color-orange-glow: var(--orange-glow);
+  --color-cyan-accent: var(--cyan-accent);
+  --color-purple-accent: var(--purple-accent);
+  --color-panel: var(--panel);
+  --color-panel-2: var(--panel-2);
+
+  --font-display: "Bungee", "Impact", system-ui, sans-serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+
+  --shadow-comic: 6px 6px 0 0 rgba(0, 0, 0, 0.9);
+  --shadow-glow-gold: 0 0 30px rgba(255, 184, 0, 0.35);
+  --shadow-glow-orange: 0 0 40px rgba(255, 122, 0, 0.4);
+}
+
+:root {
+  --radius: 0.5rem;
+
+  /* Dark comic palette */
+  --background: oklch(0.13 0.04 265);
+  --foreground: oklch(0.97 0.02 90);
+
+  --panel: oklch(0.18 0.045 265);
+  --panel-2: oklch(0.21 0.05 265);
+
+  --card: oklch(0.18 0.045 265);
+  --card-foreground: oklch(0.97 0.02 90);
+  --popover: oklch(0.18 0.045 265);
+  --popover-foreground: oklch(0.97 0.02 90);
+
+  --primary: oklch(0.84 0.17 85); /* gold #FFB800 */
+  --primary-foreground: oklch(0.15 0.04 265);
+
+  --secondary: oklch(0.25 0.05 265);
+  --secondary-foreground: oklch(0.97 0.02 90);
+
+  --muted: oklch(0.22 0.04 265);
+  --muted-foreground: oklch(0.75 0.02 80);
+
+  --accent: oklch(0.78 0.19 55); /* orange */
+  --accent-foreground: oklch(0.15 0.04 265);
+
+  --destructive: oklch(0.65 0.24 27);
+  --destructive-foreground: oklch(0.97 0.02 90);
+
+  --border: oklch(0.84 0.17 85 / 0.45);
+  --input: oklch(0.3 0.05 265);
+  --ring: oklch(0.84 0.17 85);
+
+  --gold: oklch(0.84 0.17 85);
+  --gold-deep: oklch(0.78 0.17 80);
+  --orange-glow: oklch(0.72 0.21 50);
+  --cyan-accent: oklch(0.78 0.16 220);
+  --purple-accent: oklch(0.66 0.22 305);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html,
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    background-image:
+      radial-gradient(1200px 600px at 80% -10%, rgba(255, 122, 0, 0.12), transparent 60%),
+      radial-gradient(800px 500px at -10% 30%, rgba(168, 85, 247, 0.1), transparent 60%),
+      radial-gradient(900px 700px at 50% 110%, rgba(0, 194, 255, 0.08), transparent 60%);
+    background-attachment: fixed;
+  }
+
+  ::selection {
+    background-color: var(--gold);
+    color: var(--primary-foreground);
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display);
+    letter-spacing: 0.01em;
+  }
+
+  .text-stroke-comic {
+    -webkit-text-stroke: 2px #000;
+    text-shadow:
+      4px 4px 0 #000,
+      6px 6px 0 rgba(255, 122, 0, 0.6);
+  }
+
+  .text-stroke-gold {
+    -webkit-text-stroke: 2px #000;
+    color: var(--gold);
+    text-shadow:
+      4px 4px 0 #000,
+      8px 8px 0 rgba(255, 122, 0, 0.55);
+  }
+
+  .panel {
+    background-color: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.03),
+      0 0 0 1px rgba(0, 0, 0, 0.4),
+      0 10px 30px rgba(0, 0, 0, 0.45);
+  }
+
+  .panel-glow:hover {
+    box-shadow:
+      0 0 0 1px var(--gold),
+      0 0 30px rgba(255, 184, 0, 0.25),
+      0 10px 30px rgba(0, 0, 0, 0.5);
+  }
+
+  .btn-comic {
+    box-shadow: 4px 4px 0 0 #000;
+    transition:
+      transform 0.15s ease,
+      box-shadow 0.15s ease;
+  }
+  .btn-comic:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 0 #000;
+  }
+  .btn-comic:active {
+    transform: translate(2px, 2px);
+    box-shadow: 0 0 0 0 #000;
+  }
+
+  .grid-bg {
+    background-image:
+      linear-gradient(rgba(255, 184, 0, 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 184, 0, 0.06) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+}

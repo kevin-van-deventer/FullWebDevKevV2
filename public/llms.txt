@@ -1,0 +1,24 @@
+# Neon Code Studio
+
+Professional Web Development Studio specializing in high-performance React, TypeScript, and modern AI-powered applications.
+
+## Profile
+- **Founder**: Eduard v Deventer
+- **Specialties**: Full-Stack Development, React 19, TypeScript, TanStack Start, AI Integration.
+- **Vibe**: Neon, Comic-inspired, High-performance.
+- **Location**: Cape Town, South Africa (Global Service).
+
+## Core Services
+1. Custom Web Applications
+2. AI-Powered SaaS Development
+3. High-Performance Landing Pages
+4. Technical Architecture Consulting
+
+## Tech Stack
+- Frontend: React 19, Next.js, TanStack Start, Tailwind CSS 4, Framer Motion.
+- Backend: Node.js, Cloudflare Workers, Prisma, PostgreSQL.
+- Tools: Vite, Bun, Biome, ESLint.
+
+## Contact
+- GitHub: https://github.com/EduardvDeventer
+- Twitter: https://twitter.com/vudovn
