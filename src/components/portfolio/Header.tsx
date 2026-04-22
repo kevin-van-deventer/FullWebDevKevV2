@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Github, Linkedin, Twitter, Zap, Star, Menu, X } from "lucide-react";
+import { Github, Linkedin, Twitter, Zap, Menu, X } from "lucide-react";
+import logoImg from "@/assets/neon-logo.png";
 
 const navLinks = [
   { label: "HOME", href: "#home" },
@@ -20,9 +21,8 @@ export function Header() {
       <div className="mx-auto flex max-w-[1400px] items-center justify-between gap-4 px-4 py-3 md:px-6">
         {/* Logo */}
         <a href="#home" className="flex items-center gap-2" aria-label="Home">
-          <span className="relative flex h-10 w-10 items-center justify-center rounded-md border-2 border-gold bg-panel-2 shadow-[0_0_20px_rgba(255,184,0,0.4)]">
-            <Star className="h-5 w-5 fill-gold text-gold" />
-            <Zap className="absolute -right-1 -bottom-1 h-4 w-4 fill-orange-glow text-orange-glow" />
+          <span className="relative flex h-10 w-10 items-center justify-center overflow-hidden rounded-md border-2 border-gold bg-panel-2 shadow-[0_0_20px_rgba(255,184,0,0.4)]">
+            <img src={logoImg} alt="Neon Code Studio Logo" className="h-full w-full object-cover" />
           </span>
         </a>
 

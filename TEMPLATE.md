@@ -63,7 +63,7 @@ Image manipulation and persistent data structure changes.
 
 - [ ] **Logo Replacements**:
   - Replace `/public/Guerreiro-Grappling-Logo.png` with the new transparent `.png` logo.
-  - Do a global Search & Replace in the `.tsx` files for `Guerreiro-Grappling-Logo.png` if the exact filename is changed.
+  - do a global Search & Replace in the `.tsx` files for `Guerreiro-Grappling-Logo.png` if the exact filename is changed.
 - [ ] **Photography**:
   - The template relies heavily on dynamic aspect-ratio image cards. Replace image `src` strings globally inside `page.tsx`, `About` pages, etc., with high-quality optimized images of the new facility.
 - [ ] **Schedule Initialization**:
