@@ -101,4 +101,3 @@ Before handing off the project, perform these final checks:
 - [x] **Focus Trapping**: Test the `LeadModal` and Mobile Menu with a keyboard to ensure focus does not escape to the background.
 - [x] **Heading Hierarchy**: Ensure all headings (H1-H6) follow a sequentially-descending order across all pages (H1 → H2 → H3) to maintain accessibility standards.
 - [ ] **Visual Audit (Mobile)**: Visit the site on a physical device or mobile emulator. Check every section header to ensure it is not clipped or obscured by the diagonal divider design pattern.
-
