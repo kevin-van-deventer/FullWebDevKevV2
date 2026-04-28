@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "framer-motion";
 import { Code2, Mail, Rocket, Sparkles } from "lucide-react";
 import heroImg from "@/assets/hero-developer.jpg";
@@ -12,7 +14,7 @@ export function HeroSection() {
         {/* Background image */}
         <div className="relative aspect-[16/9] w-full md:aspect-[21/9]">
           <img
-            src={heroImg}
+            src={heroImg.src}
             alt="Eduard v Deventer — Full-Stack Web Developer specialized in React and modern UI/UX design"
             className="absolute inset-0 h-full w-full object-cover"
           />

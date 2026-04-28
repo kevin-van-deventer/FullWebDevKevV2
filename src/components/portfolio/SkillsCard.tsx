@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "framer-motion";
 import { Zap, Code, FileCode, Server, Palette } from "lucide-react";
 import type { LucideIcon } from "lucide-react";

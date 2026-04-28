@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Github, Linkedin, Twitter, Zap, Menu, X } from "lucide-react";
@@ -22,7 +24,7 @@ export function Header() {
         {/* Logo */}
         <a href="#home" className="flex items-center gap-2" aria-label="Home">
           <span className="relative flex h-10 w-10 items-center justify-center overflow-hidden rounded-md border-2 border-gold bg-panel-2 shadow-[0_0_20px_rgba(255,184,0,0.4)]">
-            <img src={logoImg} alt="Neon Code Studio Logo" className="h-full w-full object-cover" />
+            <img src={logoImg.src} alt="Neon Code Studio Logo" className="h-full w-full object-cover" />
           </span>
         </a>
 

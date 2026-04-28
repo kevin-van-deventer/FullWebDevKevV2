@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "framer-motion";
 import { Star, ArrowRight, ExternalLink } from "lucide-react";
 import dashboard from "@/assets/project-dashboard.jpg";
@@ -20,7 +22,7 @@ const projects: Project[] = [
       { label: "TypeScript", color: "var(--gold)" },
       { label: "Tailwind", color: "var(--orange-glow)" },
     ],
-    image: dashboard,
+    image: dashboard.src,
   },
   {
     title: "Ecom Store",
@@ -30,7 +32,7 @@ const projects: Project[] = [
       { label: "Stripe", color: "var(--purple-accent)" },
       { label: "Tailwind", color: "var(--orange-glow)" },
     ],
-    image: ecom,
+    image: ecom.src,
   },
   {
     title: "Creative Portfolio",
@@ -40,7 +42,7 @@ const projects: Project[] = [
       { label: "CSS", color: "var(--cyan-accent)" },
       { label: "JavaScript", color: "var(--gold)" },
     ],
-    image: portfolio,
+    image: portfolio.src,
   },
 ];
 

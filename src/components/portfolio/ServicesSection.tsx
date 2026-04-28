@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "framer-motion";
 import { Code2, AppWindow, Smartphone, Gauge, Zap } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
