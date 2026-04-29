@@ -31,13 +31,17 @@ export async function sendEmail(formData: {
     });
 
     if (error) {
-      console.error("Resend Error:", error);
+      console.error("❌ Resend API Error:", error);
       return { success: false, error: error.message };
     }
 
+    console.log("✅ Email sent successfully:", data);
     return { success: true, data };
   } catch (err) {
-    console.error("Server Action Error:", err);
-    return { success: false, error: "Internal Server Error" };
+    console.error("💥 Critical Server Action Error:", err);
+    return { 
+      success: false, 
+      error: err instanceof Error ? err.message : "Internal Server Error" 
+    };
   }
 }
