@@ -1,18 +1,15 @@
-// Cloudflare next-on-pages natively handles API routes; explicit edge runtime can cause conflicts.
+export const runtime = "edge";
 
-import { NextRequest, NextResponse } from "next/server";
-
-export async function POST(req: NextRequest) {
+export async function POST(req: Request) {
   try {
     const formData = await req.json();
 
     const apiKey = process.env.RESEND_API_KEY;
 
     if (!apiKey || apiKey.trim() === "") {
-      console.error("❌ MISSING API KEY: Please add RESEND_API_KEY to Cloudflare Environment Variables.");
-      return NextResponse.json(
-        { success: false, error: "Configuration Error: Missing API Key" },
-        { status: 500 }
+      return new Response(
+        JSON.stringify({ success: false, error: "SERVER ERROR: RESEND_API_KEY is missing." }),
+        { status: 500, headers: { "Content-Type": "application/json" } }
       );
     }
 
@@ -23,8 +20,8 @@ export async function POST(req: NextRequest) {
         Authorization: `Bearer ${apiKey.trim()}`,
       },
       body: JSON.stringify({
-        from: "FullWebDevKev <onboarding@resend.dev>", // Replace with a verified domain email when ready
-        to: ["kevinlenovomail@gmail.com"], // Must be the verified email address for Resend onboarding
+        from: "FullWebDevKev <onboarding@resend.dev>",
+        to: ["kevinlenovomail@gmail.com"],
         subject: `🚀 New Mission Briefing from ${formData.name}`,
         reply_to: formData.email,
         html: `
@@ -45,21 +42,22 @@ export async function POST(req: NextRequest) {
     const result = await response.json();
 
     if (!response.ok) {
-      console.error("❌ Resend API Error:", result);
-      return NextResponse.json(
-        { success: false, error: result.message || "Failed to send email" },
-        { status: response.status }
+      return new Response(
+        JSON.stringify({ success: false, error: result.message || "Failed to send email" }),
+        { status: response.status, headers: { "Content-Type": "application/json" } }
       );
     }
 
-    console.log("✅ Email sent successfully:", result);
-    return NextResponse.json({ success: true, data: result }, { status: 200 });
+    return new Response(
+      JSON.stringify({ success: true, data: result }),
+      { status: 200, headers: { "Content-Type": "application/json" } }
+    );
 
   } catch (err) {
-    console.error("💥 Critical Fetch Error:", err);
-    return NextResponse.json(
-      { success: false, error: err instanceof Error ? err.message : "Internal Server Error" },
-      { status: 500 }
+    const errorMessage = err instanceof Error ? err.message : "Unknown System Crash";
+    return new Response(
+      JSON.stringify({ success: false, error: `CRITICAL CRASH: ${errorMessage}` }),
+      { status: 500, headers: { "Content-Type": "application/json" } }
     );
   }
 }
