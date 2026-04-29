@@ -6,19 +6,23 @@ export async function sendEmail(formData: {
   projectType: string;
   message: string;
 }) {
-  const apiKey = process.env.RESEND_API_KEY;
-
-  if (!apiKey) {
-    console.error("❌ MISSING API KEY: Please add RESEND_API_KEY to Cloudflare Environment Variables.");
-    return { success: false, error: "Configuration Error: Missing API Key" };
-  }
-
   try {
+    // 1. Check for the API Key
+    const apiKey = process.env.RESEND_API_KEY;
+    
+    if (!apiKey || apiKey.trim() === "") {
+      return { 
+        success: false, 
+        error: "SERVER ERROR: RESEND_API_KEY is missing or empty in Cloudflare settings." 
+      };
+    }
+
+    // 2. Attempt the fetch
     const response = await fetch("https://api.resend.com/emails", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${apiKey}`,
+        Authorization: `Bearer ${apiKey.trim()}`,
       },
       body: JSON.stringify({
         from: "FullWebDevKev <onboarding@resend.dev>",
@@ -40,20 +44,26 @@ export async function sendEmail(formData: {
       }),
     });
 
-    const result = await response.json();
-
-    if (!response.ok) {
-      console.error("❌ Resend API Error:", result);
-      return { success: false, error: result.message || "Failed to send email" };
+    // 3. Handle the response
+    let result;
+    try {
+      result = await response.json();
+    } catch (e) {
+      return { success: false, error: `API ERROR: Received invalid JSON from Resend (Status: ${response.status})` };
     }
 
-    console.log("✅ Email sent successfully:", result);
+    if (!response.ok) {
+      return { 
+        success: false, 
+        error: `RESEND ERROR: ${result.message || "Unknown API error"} (Code: ${result.name || "N/A"})` 
+      };
+    }
+
     return { success: true };
   } catch (err) {
-    console.error("💥 Critical Fetch Error:", err);
     return { 
       success: false, 
-      error: err instanceof Error ? err.message : "Internal Server Error" 
+      error: `CRITICAL ERROR: ${err instanceof Error ? err.message : "System crash"}` 
     };
   }
 }
