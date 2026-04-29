@@ -1,36 +1,52 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# FullWebDevKev | Portfolio
 
-## Getting Started
+Professional Web Development portfolio by Kevin van Deventer (FullWebDevKev). Built with Next.js, TypeScript, and Framer Motion, optimized for high performance and premium user experience.
 
-First, run the development server:
+## 🚀 Recent Updates
+
+- **Branding Excellence**: Fully migrated to FullWebDevKev with updated logos, metadata, and social thumbnails.
+- **Static vs. Dynamic**: Successfully transitioned the project to a Full Dynamic Next.js App on Cloudflare to enable advanced backend features.
+- **Resend Integration**: Built a robust, Edge-native email system using direct fetch for maximum reliability on Cloudflare's network.
+- **Premium UX**: Implemented Lenis Smooth Scroll for that high-end, silky-smooth browsing feel.
+- **Custom 404**: Added a bold "Mission Failed" page to keep users engaged even when they wander off the path.
+- **Favicon Overhaul**: Perfectly placed and linked all your new branding assets for browsers and mobile devices.
+
+## 🛠️ Tech Stack
+
+- **Framework**: [Next.js 15+](https://nextjs.org)
+- **Styling**: [Tailwind CSS 4](https://tailwindcss.com)
+- **Animations**: [Framer Motion](https://www.framer.com/motion/)
+- **Scrolling**: [Lenis](https://lenis.darkroom.engineering/)
+- **Email**: [Resend](https://resend.com)
+- **Deployment**: [Cloudflare Pages](https://pages.cloudflare.com)
+
+## 🏁 Getting Started
+
+First, install dependencies:
+
+```bash
+npm install
+```
+
+Then, run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🛰️ Deployment
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The project is configured for Cloudflare Pages using the `@cloudflare/next-on-pages` adapter.
 
-## Learn More
+**Build Settings:**
+- **Build command:** `npx @cloudflare/next-on-pages@1`
+- **Build output directory:** `.vercel/output/static`
 
-To learn more about Next.js, take a look at the following resources:
+**Environment Variables:**
+- `RESEND_API_KEY`: Required for the contact form.
+- `NEXT_PUBLIC_SITE_URL`: The canonical URL of the site.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+© 2026 FullWebDevKev · Crafted with ★
