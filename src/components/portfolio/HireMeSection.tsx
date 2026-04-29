@@ -29,13 +29,32 @@ export function HireMeSection() {
 
   const onSubmit = async (data: FormData) => {
     setIsSending(true);
-    // Simulate encryption and sending delay
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    setIsSending(false);
-    setIsSubmitted(true);
-    toast.success("Mission Briefing Received! I'll contact you soon.");
-    reset();
-    setTimeout(() => setIsSubmitted(false), 5000);
+    
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      const result = await response.json();
+
+      if (response.ok && result.success) {
+        setIsSubmitted(true);
+        toast.success("Mission Briefing Received! I'll contact you soon.");
+        reset();
+        setTimeout(() => setIsSubmitted(false), 5000);
+      } else {
+        toast.error("Mission Failed: " + (result.error || "Please try again later."));
+      }
+    } catch (error) {
+      console.error("Fetch Error:", error);
+      toast.error("Mission Failed: Could not connect to the server.");
+    } finally {
+      setIsSending(false);
+    }
   };
 
   return (
