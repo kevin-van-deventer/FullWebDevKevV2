@@ -17,7 +17,7 @@ const bungee = Bungee({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://neon-code-studio.com"),
+  metadataBase: new URL("https://fullwebdevkev.com"),
   title: {
     default: "FullWebDevKev | Kevin van Deventer — Full-Stack Developer",
     template: "%s | FullWebDevKev"
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "FullWebDevKev | Kevin van Deventer",
     description: "High-performance websites and applications built with cutting-edge tech stacks by Kevin van Deventer.",
-    url: "https://neon-code-studio.com",
+    url: "https://fullwebdevkev.com",
     siteName: "FullWebDevKev",
     locale: "en_US",
     type: "website",
@@ -72,8 +72,8 @@ export default function RootLayout({
               "@type": "ProfessionalService",
               name: "FullWebDevKev",
               image: "/og-image.png",
-              "@id": "https://neon-code-studio.com",
-              url: "https://neon-code-studio.com",
+              "@id": "https://fullwebdevkev.com",
+              url: "https://fullwebdevkev.com",
               telephone: "+27123456789",
               address: {
                 "@type": "PostalAddress",
