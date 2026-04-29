@@ -1,6 +1,3 @@
-export const runtime = "edge";
-export const dynamic = "force-dynamic";
-
 import { Header } from "@/components/portfolio/Header";
 import { HeroSection } from "@/components/portfolio/HeroSection";
 import { AboutCard } from "@/components/portfolio/AboutCard";

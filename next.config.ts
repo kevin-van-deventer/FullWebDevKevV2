@@ -1,7 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // output: "export", // Disabled to allow Server Actions on Cloudflare
+  output: "export", // Re-enabled static export for maximum stability
   images: {
     unoptimized: true, // Required for static export
     remotePatterns: [

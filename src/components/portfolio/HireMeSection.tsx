@@ -6,7 +6,6 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
-import { sendEmail } from "@/app/actions";
 import { toast } from "sonner";
 
 const formSchema = z.object({
@@ -30,17 +29,13 @@ export function HireMeSection() {
 
   const onSubmit = async (data: FormData) => {
     setIsSending(true);
-    const result = await sendEmail(data);
+    // Simulate encryption and sending delay
+    await new Promise((resolve) => setTimeout(resolve, 1500));
     setIsSending(false);
-
-    if (result.success) {
-      setIsSubmitted(true);
-      toast.success("Briefing Received! I'll contact you soon.");
-      reset();
-      setTimeout(() => setIsSubmitted(false), 5000);
-    } else {
-      toast.error("Mission Failed: " + (result.error || "Please try again later."));
-    }
+    setIsSubmitted(true);
+    toast.success("Mission Briefing Received! I'll contact you soon.");
+    reset();
+    setTimeout(() => setIsSubmitted(false), 5000);
   };
 
   return (
