@@ -1,4 +1,4 @@
-export const runtime = "edge";
+// Cloudflare next-on-pages natively handles API routes; explicit edge runtime can cause conflicts.
 
 import { NextRequest, NextResponse } from "next/server";
 
