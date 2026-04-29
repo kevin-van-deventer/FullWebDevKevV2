@@ -47,12 +47,21 @@ export const metadata: Metadata = {
     siteName: "FullWebDevKev",
     locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: "/hero-developer.jpg",
+        width: 1200,
+        height: 630,
+        alt: "FullWebDevKev — Full-Stack Developer",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "FullWebDevKev | Kevin van Deventer",
     description: "High-performance web engineering and modern UI/UX design.",
     creator: "@vudovn",
+    images: ["/hero-developer.jpg"],
   },
 };
 
@@ -71,7 +80,7 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "ProfessionalService",
               name: "FullWebDevKev",
-              image: "/og-image.png",
+              image: "/hero-developer.jpg",
               "@id": "https://fullwebdevkev.com",
               url: "https://fullwebdevkev.com",
               telephone: "+27123456789",
