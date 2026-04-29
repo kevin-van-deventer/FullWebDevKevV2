@@ -16,20 +16,32 @@ const formSchema = z.object({
 
 type FormData = z.infer<typeof formSchema>;
 
+import { sendEmail } from "@/app/actions";
+import { toast } from "sonner";
+
 export function HireMeSection() {
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const { register, handleSubmit, formState: { errors }, watch } = useForm<FormData>({
+  const [isSending, setIsSending] = useState(false);
+  const { register, handleSubmit, formState: { errors }, watch, reset } = useForm<FormData>({
     resolver: zodResolver(formSchema),
     defaultValues: { projectType: "web" }
   });
 
   const selectedType = watch("projectType");
 
-  const onSubmit = (data: FormData) => {
-    console.log("Mission Briefing Received:", data);
-    setIsSubmitted(true);
-    // Simulate API call
-    setTimeout(() => setIsSubmitted(false), 5000);
+  const onSubmit = async (data: FormData) => {
+    setIsSending(true);
+    const result = await sendEmail(data);
+    setIsSending(false);
+
+    if (result.success) {
+      setIsSubmitted(true);
+      toast.success("Briefing Received! I'll contact you soon.");
+      reset();
+      setTimeout(() => setIsSubmitted(false), 5000);
+    } else {
+      toast.error("Mission Failed: " + (result.error || "Please try again later."));
+    }
   };
 
   return (
@@ -162,7 +174,12 @@ export function HireMeSection() {
                 className="group relative w-full overflow-hidden rounded-md border-2 border-black bg-gold py-5 transition-transform active:scale-[0.98]"
               >
                 <div className="relative z-10 flex items-center justify-center gap-3 font-display text-lg tracking-tighter text-black">
-                  {isSubmitted ? (
+                  {isSending ? (
+                    <>
+                      <Cpu className="h-6 w-6 animate-spin" />
+                      ENCRYPTING...
+                    </>
+                  ) : isSubmitted ? (
                     <>
                       <CheckCircle2 className="h-6 w-6 animate-bounce" />
                       BRIEFING RECEIVED

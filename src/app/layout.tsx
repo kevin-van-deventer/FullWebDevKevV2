@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Bungee } from "next/font/google";
 import { FloatingWhatsApp } from "@/components/portfolio/FloatingWhatsApp";
+import { SmoothScroll } from "@/components/portfolio/SmoothScroll";
 import "./globals.css";
 
 const inter = Inter({
@@ -124,9 +125,11 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body>
-        {children}
-        <FloatingWhatsApp />
+      <body className="antialiased">
+        <SmoothScroll>
+          {children}
+          <FloatingWhatsApp />
+        </SmoothScroll>
       </body>
     </html>
   );
