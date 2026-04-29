@@ -4,7 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Github, Linkedin, MessageCircle, Zap, Menu, X } from "lucide-react";
-import logoImg from "@/assets/neon-logo.png";
+import logoSvg from "@/assets/fullwebdevkev-logo.svg";
 
 const navLinks = [
   { label: "HOME", href: "#home" },
@@ -25,7 +25,7 @@ export function Header() {
         {/* Logo */}
         <a href="#home" className="flex items-center gap-2" aria-label="Home">
           <span className="relative flex h-10 w-10 items-center justify-center overflow-hidden rounded-md border-2 border-gold bg-panel-2 shadow-[0_0_20px_rgba(255,184,0,0.4)]">
-            <Image src={logoImg} alt="FullWebDevKev Logo" fill sizes="40px" className="object-cover" />
+            <Image src={logoSvg} alt="FullWebDevKev Logo" fill sizes="40px" className="object-contain p-1" />
           </span>
         </a>
 
