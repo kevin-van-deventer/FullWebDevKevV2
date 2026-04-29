@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import { LucideIcon } from "lucide-react";
 
 interface AnimatedTitleProps {
@@ -13,7 +13,7 @@ interface AnimatedTitleProps {
 export function AnimatedTitle({ title, subtitle, Icon, color = "var(--gold)" }: AnimatedTitleProps) {
   const characters = Array.from(title);
 
-  const container = {
+  const container: Variants = {
     hidden: { opacity: 0 },
     visible: (i = 1) => ({
       opacity: 1,
@@ -21,7 +21,7 @@ export function AnimatedTitle({ title, subtitle, Icon, color = "var(--gold)" }: 
     }),
   };
 
-  const child = {
+  const child: Variants = {
     visible: {
       opacity: 1,
       y: 0,

@@ -32,7 +32,14 @@ function ReviewCard({ review, idx }: { review: Review; idx: number }) {
           className="h-14 w-14 overflow-hidden rounded-full border-4 border-black bg-panel-2 shadow-[4px_4px_0_0_#000] transition-transform group-hover:scale-110"
           style={{ borderColor: review.color }}
         >
-          <Image src={review.avatar} alt={review.name} width={56} height={56} className="h-full w-full object-cover" />
+          <Image 
+            src={review.avatar} 
+            alt={review.name} 
+            width={56} 
+            height={56} 
+            unoptimized
+            className="h-full w-full object-cover" 
+          />
         </div>
         <div>
           <h4 className="font-display text-sm tracking-wide text-foreground uppercase">{review.name}</h4>

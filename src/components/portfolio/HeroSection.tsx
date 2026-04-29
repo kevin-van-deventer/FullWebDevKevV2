@@ -19,6 +19,7 @@ export function HeroSection() {
             src={heroImg}
             alt="Kevin van Deventer — Full-Stack Web Developer specialized in React and modern UI/UX design"
             fill
+            sizes="100vw"
             priority
             className="object-cover"
           />
@@ -38,8 +39,8 @@ export function HeroSection() {
             <Image
               src={characterImg}
               alt="Cartoon Kevin"
-              fill
-              className="object-contain object-bottom"
+              className="h-full w-auto object-contain object-bottom"
+              priority
             />
           </motion.div>
         </div>

@@ -74,6 +74,7 @@ function ProjectCard({ project, idx }: { project: Project; idx: number }) {
           src={project.image}
           alt={project.title}
           fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           className="object-cover transition-transform duration-500 group-hover:scale-110"
         />
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />

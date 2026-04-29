@@ -25,7 +25,7 @@ export function Header() {
         {/* Logo */}
         <a href="#home" className="flex items-center gap-2" aria-label="Home">
           <span className="relative flex h-10 w-10 items-center justify-center overflow-hidden rounded-md border-2 border-gold bg-panel-2 shadow-[0_0_20px_rgba(255,184,0,0.4)]">
-            <Image src={logoImg} alt="FullWebDevKev Logo" fill className="object-cover" />
+            <Image src={logoImg} alt="FullWebDevKev Logo" fill sizes="40px" className="object-cover" />
           </span>
         </a>
 
