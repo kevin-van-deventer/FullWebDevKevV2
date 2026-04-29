@@ -13,7 +13,7 @@ export async function sendEmail(formData: {
   try {
     const { data, error } = await resend.emails.send({
       from: "FullWebDevKev <onboarding@resend.dev>", // Once verified, use admin@fullwebdevkev.com
-      to: ["admin@fullwebdevkev.com"],
+      to: ["kevinlenovomail@gmail.com"],
       subject: `🚀 New Mission Briefing from ${formData.name}`,
       replyTo: formData.email,
       html: `
