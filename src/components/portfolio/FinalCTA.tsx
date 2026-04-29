@@ -6,7 +6,6 @@ import { Zap, ArrowRight } from "lucide-react";
 export function FinalCTA() {
   return (
     <motion.section
-      id="contact"
       initial={{ opacity: 0, scale: 0.95 }}
       whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ once: true, margin: "-80px" }}
@@ -45,7 +44,7 @@ export function FinalCTA() {
             Got an idea? Let's turn it into a fast, beautiful product.
           </p>
           <a
-            href="mailto:eduard@neoncode.studio"
+            href="mailto:kevin@neoncode.studio"
             className="btn-comic mt-5 inline-flex items-center gap-2 rounded-md border-2 border-black bg-background px-6 py-3 text-xs font-extrabold tracking-widest text-gold"
           >
             HIRE ME <ArrowRight className="h-4 w-4" />

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Bungee } from "next/font/google";
+import { FloatingWhatsApp } from "@/components/portfolio/FloatingWhatsApp";
 import "./globals.css";
 
 const inter = Inter({
@@ -16,9 +17,9 @@ const bungee = Bungee({
 });
 
 export const metadata: Metadata = {
-  title: "Neon Code Studio | Eduard v Deventer — Full-Stack Developer",
+  title: "Neon Code Studio | Kevin van Deventer — Full-Stack Developer",
   description: "Professional Web Development Studio specializing in high-performance React, TypeScript, and modern AI-powered applications.",
-  authors: [{ name: "Eduard v Deventer" }],
+  authors: [{ name: "Kevin van Deventer" }],
   openGraph: {
     title: "Neon Code Studio — Build Something Epic",
     description: "High-performance websites and applications built with cutting-edge tech stacks.",
@@ -68,14 +69,18 @@ export default function RootLayout({
                 closes: "18:00",
               },
               sameAs: [
-                "https://github.com/EduardvDeventer",
-                "https://twitter.com/vudovn",
+                "https://github.com/kevin-van-deventer",
+                "https://linkedin.com/in/kevin-van-deventer",
+                "https://wa.me/84582168746"
               ],
             }),
           }}
         />
       </head>
-      <body>{children}</body>
+      <body>
+        {children}
+        <FloatingWhatsApp />
+      </body>
     </html>
   );
 }

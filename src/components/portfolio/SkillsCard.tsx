@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Zap, Code, FileCode, Server, Palette } from "lucide-react";
+import { AnimatedTitle } from "./AnimatedTitle";
 import type { LucideIcon } from "lucide-react";
 
 type Skill = {
@@ -66,12 +67,12 @@ export function SkillsCard() {
       transition={{ duration: 0.5 }}
       className="panel panel-glow p-5 transition md:p-6"
     >
-      <div className="mb-5 flex items-center gap-2">
-        <span className="grid h-8 w-8 place-items-center rounded-md border border-border bg-panel-2 text-gold">
-          <Zap className="h-4 w-4 fill-gold" />
-        </span>
-        <h2 className="font-display text-xl tracking-wide text-foreground">SKILLS</h2>
-      </div>
+      <AnimatedTitle 
+        title="My Skills" 
+        subtitle="Weaponry of Choice"
+        Icon={Zap} 
+        color="var(--gold)"
+      />
       <div className="grid gap-x-8 gap-y-4 md:grid-cols-2">
         {skills.map((s, i) => (
           <SkillBar key={s.label} skill={s} idx={i} />

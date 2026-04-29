@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { User, ArrowRight, Leaf } from "lucide-react";
+import { AnimatedTitle } from "./AnimatedTitle";
 
 export function AboutCard() {
   return (
@@ -13,12 +14,12 @@ export function AboutCard() {
       transition={{ duration: 0.5 }}
       className="panel panel-glow relative p-5 transition md:p-6"
     >
-      <div className="mb-4 flex items-center gap-2">
-        <span className="grid h-8 w-8 place-items-center rounded-md border border-border bg-panel-2 text-gold">
-          <User className="h-4 w-4" />
-        </span>
-        <h2 className="font-display text-xl tracking-wide text-foreground">ABOUT ME</h2>
-      </div>
+      <AnimatedTitle 
+        title="About Me" 
+        subtitle="The Architect of Neon Code Studio"
+        Icon={User} 
+        color="var(--gold)"
+      />
 
       <p className="max-w-3xl text-base leading-relaxed text-foreground/90 md:text-lg">
         I lead <span className="font-bold text-gold underline decoration-gold/30 underline-offset-4">Neon Code Studio</span>, 

@@ -1,0 +1,23 @@
+[
+  {
+    "name": "Alex Rivera",
+    "role": "CEO @ TechStart",
+    "content": "Kevin transformed our vision into a reality. The performance gains were immediate, and the UI is absolutely stunning!",
+    "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=Alex",
+    "color": "var(--gold)"
+  },
+  {
+    "name": "Sarah Jenkins",
+    "role": "Product Manager @ Designify",
+    "content": "Working with Neon Code Studio was a breeze. They handled everything from architecture to deployment with extreme precision.",
+    "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah",
+    "color": "var(--cyan-accent)"
+  },
+  {
+    "name": "Marcus Chen",
+    "role": "Founder @ CreativeLoop",
+    "content": "The attention to detail in the micro-animations is next level. Our users love the new experience. Highly recommended!",
+    "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=Marcus",
+    "color": "var(--purple-accent)"
+  }
+]

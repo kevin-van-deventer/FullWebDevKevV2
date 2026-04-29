@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Code2, Mail, Rocket, Sparkles } from "lucide-react";
 import heroImg from "@/assets/fwdk_hero_section_background_image.png";
+import characterImg from "@/assets/fullwebdevkev_cartoon_character_hero_secction_image.svg";
 
 export function HeroSection() {
   return (
@@ -10,7 +11,7 @@ export function HeroSection() {
       id="home"
       className="relative mx-auto max-w-[1400px] px-4 pt-8 pb-12 md:px-6 md:pt-12"
     >
-      <div className="panel relative overflow-hidden rounded-lg border-2 border-gold/50 shadow-[0_0_60px_rgba(255,122,0,0.2)]">
+      <div className="panel relative rounded-lg border-2 border-gold/50 shadow-[0_0_60px_rgba(255,122,0,0.2)]">
         {/* Background image */}
         <div className="relative aspect-[16/9] w-full md:aspect-[21/9]">
           <img
@@ -21,6 +22,18 @@ export function HeroSection() {
           {/* Readability overlays */}
           <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/60 to-background/10 md:from-background/90 md:via-background/40 md:to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-background/30" />
+        </div>
+
+        {/* Cartoon character character overlap */}
+        <div className="pointer-events-none absolute right-0 bottom-0 z-10 h-full w-full overflow-visible md:right-[-4%] md:bottom-[-5%]">
+          <motion.img
+            initial={{ opacity: 0, x: 50, scale: 0.9 }}
+            animate={{ opacity: 1, x: 0, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+            src={characterImg.src}
+            alt="Cartoon Kevin"
+            className="absolute right-0 bottom-0 h-[80%] w-auto object-contain md:h-[110%]"
+          />
         </div>
 
         {/* Foreground content */}

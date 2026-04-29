@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Github, Linkedin, Twitter, Zap, Menu, X } from "lucide-react";
+import { Github, Linkedin, MessageCircle, Zap, Menu, X } from "lucide-react";
 import logoImg from "@/assets/neon-logo.png";
 
 const navLinks = [
@@ -57,7 +57,7 @@ export function Header() {
         <div className="flex items-center gap-2">
           <div className="hidden items-center gap-1 md:flex">
             <a
-              href="https://github.com/EduardvDeventer"
+              href="https://github.com/kevin-van-deventer"
               target="_blank"
               rel="noreferrer"
               className="grid h-9 w-9 place-items-center rounded-md border border-border bg-panel text-foreground/80 transition hover:border-gold hover:text-gold"
@@ -66,7 +66,7 @@ export function Header() {
               <Github className="h-4 w-4" />
             </a>
             <a
-              href="https://linkedin.com/in/eduardvdeventer"
+              href="https://linkedin.com/in/kevin-van-deventer"
               target="_blank"
               rel="noreferrer"
               className="grid h-9 w-9 place-items-center rounded-md border border-border bg-panel text-foreground/80 transition hover:border-gold hover:text-gold"
@@ -75,13 +75,13 @@ export function Header() {
               <Linkedin className="h-4 w-4" />
             </a>
             <a
-              href="https://twitter.com/vudovn"
+              href="https://wa.me/84582168746"
               target="_blank"
               rel="noreferrer"
               className="grid h-9 w-9 place-items-center rounded-md border border-border bg-panel text-foreground/80 transition hover:border-gold hover:text-gold"
-              aria-label="Twitter"
+              aria-label="WhatsApp"
             >
-              <Twitter className="h-4 w-4" />
+              <MessageCircle className="h-4 w-4" />
             </a>
           </div>
 

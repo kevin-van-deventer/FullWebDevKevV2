@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Star, ArrowRight, ExternalLink } from "lucide-react";
+import { AnimatedTitle } from "./AnimatedTitle";
 import dashboard from "@/assets/project-dashboard.jpg";
 import ecom from "@/assets/project-ecom.jpg";
 import portfolio from "@/assets/project-portfolio.jpg";
@@ -110,13 +111,13 @@ export function ProjectsSection() {
       transition={{ duration: 0.5 }}
       className="panel p-5 md:p-6"
     >
-      <div className="mb-5 flex items-center justify-between gap-3">
-        <div className="flex items-center gap-2">
-          <span className="grid h-8 w-8 place-items-center rounded-md border border-border bg-panel-2 text-gold">
-            <Star className="h-4 w-4 fill-gold" />
-          </span>
-          <h2 className="font-display text-xl tracking-wide text-foreground">FEATURED PROJECTS</h2>
-        </div>
+      <div className="mb-8 flex items-center justify-between gap-4 flex-wrap">
+        <AnimatedTitle 
+          title="Featured Projects" 
+          subtitle="Battle-Tested Codebases"
+          Icon={Star} 
+          color="var(--gold)"
+        />
         <a
           href="#"
           className="inline-flex items-center gap-1 text-[11px] font-extrabold tracking-widest text-gold hover:text-orange-glow"
@@ -125,7 +126,7 @@ export function ProjectsSection() {
         </a>
       </div>
 
-      <div className="grid gap-8">
+      <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
 
 
         {projects.map((p, i) => (

@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Code2, AppWindow, Smartphone, Gauge, Zap } from "lucide-react";
+import { AnimatedTitle } from "./AnimatedTitle";
 import type { LucideIcon } from "lucide-react";
 
 type Service = { title: string; text: string; Icon: LucideIcon; color: string };
@@ -61,27 +62,17 @@ function ServiceCard({ service, idx }: { service: Service; idx: number }) {
 export function ServicesSection() {
   return (
     <section id="services" className="panel p-5 md:p-6">
-      <motion.div
-        initial={{ opacity: 0, x: -20 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.4 }}
-        className="mb-8 rounded-md border border-border bg-panel-2 p-6"
-      >
-        <div className="mb-2 flex items-center gap-3">
-          <Zap className="h-6 w-6 fill-gold text-gold" />
-          <h2 className="font-display text-2xl tracking-wide text-foreground">WHAT I DO</h2>
-        </div>
-        <p className="text-sm leading-relaxed text-muted-foreground">
-          Specialized services to build, scale, and optimize your digital presence.
-        </p>
-      </motion.div>
+      <AnimatedTitle 
+        title="What I Do" 
+        subtitle="Specialized services to build, scale, and optimize"
+        Icon={Zap} 
+        color="var(--gold)"
+      />
       <div className="grid gap-6 md:grid-cols-2">
         {services.map((s, i) => (
           <ServiceCard key={s.title} service={s} idx={i} />
         ))}
       </div>
-
     </section>
   );
 }
