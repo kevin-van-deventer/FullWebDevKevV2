@@ -1,3 +1,5 @@
+export const runtime = "edge";
+
 import { Header } from "@/components/portfolio/Header";
 import { HeroSection } from "@/components/portfolio/HeroSection";
 import { AboutCard } from "@/components/portfolio/AboutCard";

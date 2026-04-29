@@ -6,6 +6,8 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
+import { sendEmail } from "@/app/actions";
+import { toast } from "sonner";
 
 const formSchema = z.object({
   name: z.string().min(2, "Name is too short"),
@@ -15,9 +17,6 @@ const formSchema = z.object({
 });
 
 type FormData = z.infer<typeof formSchema>;
-
-import { sendEmail } from "@/app/actions";
-import { toast } from "sonner";
 
 export function HireMeSection() {
   const [isSubmitted, setIsSubmitted] = useState(false);
