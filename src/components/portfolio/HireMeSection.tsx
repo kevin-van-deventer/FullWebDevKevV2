@@ -79,8 +79,9 @@ export function HireMeSection() {
               </h2>
 
               <p className="text-muted-foreground text-sm md:text-base leading-relaxed max-w-sm">
-                Ready to deploy your next digital masterpiece? Fill out the coordinates and let's launch.
+                Ready to deploy your next digital masterpiece? Fill out the coordinates and let&apos;s launch.
               </p>
+
 
               <div className="space-y-4 pt-4 border-t border-border/40">
                 {[

@@ -66,7 +66,7 @@ export function AnimatedTitle({ title, subtitle, Icon, color = "var(--gold)" }: 
             <motion.span
               key={index}
               variants={child}
-              className="font-display text-3xl md:text-4xl tracking-tight text-foreground"
+              className="font-display text-2xl md:text-4xl tracking-tight text-foreground"
             >
               {char === " " ? "\u00A0" : char.toUpperCase()}
             </motion.span>
@@ -80,7 +80,7 @@ export function AnimatedTitle({ title, subtitle, Icon, color = "var(--gold)" }: 
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.6 }}
-          className="text-[10px] font-black uppercase tracking-[0.3em] text-muted-foreground ml-16"
+          className="text-[9px] md:text-[10px] font-black uppercase tracking-[0.3em] text-muted-foreground ml-16"
         >
           {subtitle}
         </motion.p>

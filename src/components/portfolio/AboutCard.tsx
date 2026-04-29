@@ -16,13 +16,13 @@ export function AboutCard() {
     >
       <AnimatedTitle 
         title="About Me" 
-        subtitle="The Architect of Neon Code Studio"
+        subtitle="The Architect of FullWebDevKev"
         Icon={User} 
         color="var(--gold)"
       />
 
       <p className="max-w-3xl text-base leading-relaxed text-foreground/90 md:text-lg">
-        I lead <span className="font-bold text-gold underline decoration-gold/30 underline-offset-4">Neon Code Studio</span>, 
+        I lead <span className="font-bold text-gold underline decoration-gold/30 underline-offset-4">FullWebDevKev</span>, 
         an engineering-first collective dedicated to building high-performance, accessible, 
         and visually stunning web applications. I specialize in turning complex 
         requirements into seamless digital experiences.

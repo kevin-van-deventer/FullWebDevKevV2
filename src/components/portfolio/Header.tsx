@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Github, Linkedin, MessageCircle, Zap, Menu, X } from "lucide-react";
 import logoImg from "@/assets/neon-logo.png";
@@ -24,7 +25,7 @@ export function Header() {
         {/* Logo */}
         <a href="#home" className="flex items-center gap-2" aria-label="Home">
           <span className="relative flex h-10 w-10 items-center justify-center overflow-hidden rounded-md border-2 border-gold bg-panel-2 shadow-[0_0_20px_rgba(255,184,0,0.4)]">
-            <img src={logoImg.src} alt="Neon Code Studio Logo" className="h-full w-full object-cover" />
+            <Image src={logoImg} alt="FullWebDevKev Logo" fill className="object-cover" />
           </span>
         </a>
 
@@ -89,7 +90,7 @@ export function Header() {
             href="#contact"
             className="btn-comic hidden items-center gap-2 rounded-md border-2 border-black bg-gold px-3 py-2 text-xs font-extrabold tracking-widest text-primary-foreground sm:inline-flex"
           >
-            LET'S WORK TOGETHER
+            LET&apos;S WORK TOGETHER
             <Zap className="h-4 w-4 fill-black" />
           </a>
 
@@ -130,7 +131,7 @@ export function Header() {
                 onClick={() => setOpen(false)}
                 className="btn-comic mt-2 inline-flex items-center justify-center gap-2 rounded-md border-2 border-black bg-gold px-3 py-2 text-xs font-extrabold tracking-widest text-primary-foreground"
               >
-                LET'S WORK TOGETHER <Zap className="h-4 w-4 fill-black" />
+                LET&apos;S WORK TOGETHER <Zap className="h-4 w-4 fill-black" />
               </a>
             </nav>
           </motion.div>

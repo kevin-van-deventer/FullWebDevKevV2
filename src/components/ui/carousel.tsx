@@ -95,7 +95,12 @@ const Carousel = React.forwardRef<
       return;
     }
 
-    onSelect(api);
+    // Use requestAnimationFrame to avoid synchronous setState in effect
+    const handleInitialSelect = () => {
+      onSelect(api);
+    };
+    requestAnimationFrame(handleInitialSelect);
+
     api.on("reInit", onSelect);
     api.on("select", onSelect);
 

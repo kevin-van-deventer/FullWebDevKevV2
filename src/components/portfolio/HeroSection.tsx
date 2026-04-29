@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { Code2, Mail, Rocket, Sparkles } from "lucide-react";
 import heroImg from "@/assets/fwdk_hero_section_background_image.png";
 import characterImg from "@/assets/fullwebdevkev_cartoon_character_hero_secction_image.svg";
@@ -9,15 +10,17 @@ export function HeroSection() {
   return (
     <section
       id="home"
-      className="relative mx-auto max-w-[1400px] px-4 pt-8 pb-12 md:px-6 md:pt-12"
+      className="relative mx-auto max-w-[1400px] overflow-hidden px-4 pt-8 pb-12 md:px-6 md:pt-12"
     >
       <div className="panel relative rounded-lg border-2 border-gold/50 shadow-[0_0_60px_rgba(255,122,0,0.2)]">
         {/* Background image */}
         <div className="relative aspect-[16/9] w-full md:aspect-[21/9]">
-          <img
-            src={heroImg.src}
+          <Image
+            src={heroImg}
             alt="Kevin van Deventer — Full-Stack Web Developer specialized in React and modern UI/UX design"
-            className="absolute inset-0 h-full w-full object-cover"
+            fill
+            priority
+            className="object-cover"
           />
           {/* Readability overlays */}
           <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/60 to-background/10 md:from-background/90 md:via-background/40 md:to-transparent" />
@@ -26,14 +29,19 @@ export function HeroSection() {
 
         {/* Cartoon character character overlap */}
         <div className="pointer-events-none absolute right-0 bottom-0 z-10 h-full w-full overflow-visible md:right-[-4%] md:bottom-[-5%]">
-          <motion.img
+          <motion.div
             initial={{ opacity: 0, x: 50, scale: 0.9 }}
             animate={{ opacity: 1, x: 0, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-            src={characterImg.src}
-            alt="Cartoon Kevin"
-            className="absolute right-0 bottom-0 h-[80%] w-auto object-contain md:h-[110%]"
-          />
+            className="absolute right-[-10%] bottom-0 h-[60%] w-auto md:right-0 md:h-[110%]"
+          >
+            <Image
+              src={characterImg}
+              alt="Cartoon Kevin"
+              fill
+              className="object-contain object-bottom"
+            />
+          </motion.div>
         </div>
 
         {/* Foreground content */}
@@ -53,7 +61,7 @@ export function HeroSection() {
                 initial={{ opacity: 0, x: -30 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6 }}
-                className="font-display text-5xl leading-[0.95] sm:text-6xl md:text-7xl lg:text-8xl"
+                className="font-display text-4xl leading-[0.95] sm:text-6xl md:text-7xl lg:text-8xl"
               >
                 <span className="text-stroke-comic block text-foreground drop-shadow-[0_4px_0_rgba(0,0,0,0.6)]">
                   FULL-STACK
@@ -88,13 +96,13 @@ export function HeroSection() {
               >
                 <a
                   href="#projects"
-                  className="btn-comic inline-flex items-center gap-2 rounded-md border-2 border-black bg-gold px-5 py-3 text-xs font-extrabold tracking-widest text-primary-foreground"
+                  className="btn-comic inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-md border-2 border-black bg-gold px-5 py-3 text-xs font-extrabold tracking-widest text-primary-foreground"
                 >
                   <Rocket className="h-4 w-4" /> VIEW MY WORK
                 </a>
                 <a
                   href="#contact"
-                  className="btn-comic inline-flex items-center gap-2 rounded-md border-2 border-black bg-panel-2 px-5 py-3 text-xs font-extrabold tracking-widest text-foreground"
+                  className="btn-comic inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-md border-2 border-black bg-panel-2 px-5 py-3 text-xs font-extrabold tracking-widest text-foreground"
                 >
                   <Mail className="h-4 w-4 text-gold" /> CONTACT ME
                 </a>

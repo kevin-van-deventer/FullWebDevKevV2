@@ -35,13 +35,13 @@ export function FinalCTA() {
 
         <div className="relative">
           <h2 className="font-display text-3xl leading-tight sm:text-4xl md:text-5xl">
-            LET'S BUILD <br className="sm:hidden" />
+            LET&apos;S BUILD <br className="sm:hidden" />
             <span className="inline-block -rotate-1 bg-black px-3 py-1 text-gold">
               SOMETHING EPIC!
             </span>
           </h2>
           <p className="mx-auto mt-3 max-w-md text-sm font-medium text-black/80">
-            Got an idea? Let's turn it into a fast, beautiful product.
+            Got an idea? Let&apos;s turn it into a fast, beautiful product.
           </p>
           <a
             href="mailto:kevin@neoncode.studio"

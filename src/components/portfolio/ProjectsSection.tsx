@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { Star, ArrowRight, ExternalLink } from "lucide-react";
 import { AnimatedTitle } from "./AnimatedTitle";
 import dashboard from "@/assets/project-dashboard.jpg";
@@ -69,13 +70,11 @@ function ProjectCard({ project, idx }: { project: Project; idx: number }) {
       className="panel panel-glow group flex flex-col overflow-hidden transition"
     >
       <div className="relative aspect-[16/10] overflow-hidden border-b border-border">
-        <img
+        <Image
           src={project.image}
           alt={project.title}
-          loading="lazy"
-          width={768}
-          height={512}
-          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+          fill
+          className="object-cover transition-transform duration-500 group-hover:scale-110"
         />
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
       </div>

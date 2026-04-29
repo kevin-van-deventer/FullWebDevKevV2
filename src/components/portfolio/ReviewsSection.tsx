@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { Quote, MessageSquare } from "lucide-react";
 import reviewsData from "@/data/reviews.json";
 import { AnimatedTitle } from "./AnimatedTitle";
@@ -31,7 +32,7 @@ function ReviewCard({ review, idx }: { review: Review; idx: number }) {
           className="h-14 w-14 overflow-hidden rounded-full border-4 border-black bg-panel-2 shadow-[4px_4px_0_0_#000] transition-transform group-hover:scale-110"
           style={{ borderColor: review.color }}
         >
-          <img src={review.avatar} alt={review.name} className="h-full w-full object-cover" />
+          <Image src={review.avatar} alt={review.name} width={56} height={56} className="h-full w-full object-cover" />
         </div>
         <div>
           <h4 className="font-display text-sm tracking-wide text-foreground uppercase">{review.name}</h4>
@@ -43,7 +44,7 @@ function ReviewCard({ review, idx }: { review: Review; idx: number }) {
       <div className="relative flex-1 rounded-xl border-2 border-black bg-panel-2 p-4 shadow-[4px_4px_0_0_#000]">
         <Quote className="absolute -top-3 -left-2 h-6 w-6 text-gold fill-gold rotate-12" />
         <p className="text-sm italic leading-relaxed text-foreground/90">
-          "{review.content}"
+          &quot;{review.content}&quot;
         </p>
         {/* Speech Bubble Tail */}
         <div className="absolute -top-3 left-6 h-4 w-4 bg-panel-2 border-t-2 border-l-2 border-black rotate-45" />
@@ -62,6 +63,36 @@ function ReviewCard({ review, idx }: { review: Review; idx: number }) {
 export function ReviewsSection() {
   return (
     <section id="reviews" className="mx-auto max-w-[1400px] py-12 relative overflow-visible">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            reviews.map((r) => ({
+              "@context": "https://schema.org",
+              "@type": "Review",
+              reviewBody: r.content,
+              author: {
+                "@type": "Person",
+                name: r.name,
+                jobTitle: r.role,
+              },
+              publisher: {
+                "@type": "Organization",
+                name: "FullWebDevKev",
+              },
+              itemReviewed: {
+                "@type": "ProfessionalService",
+                name: "FullWebDevKev",
+              },
+              reviewRating: {
+                "@type": "Rating",
+                ratingValue: "5",
+                bestRating: "5",
+              },
+            }))
+          ),
+        }}
+      />
       {/* Halftone Pattern Overlay (subtle) */}
       <div className="absolute inset-0 pointer-events-none opacity-[0.03] overflow-hidden" 
            style={{ backgroundImage: "radial-gradient(circle, currentColor 1px, transparent 1px)", backgroundSize: "10px 10px" }} />

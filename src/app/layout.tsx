@@ -17,17 +17,42 @@ const bungee = Bungee({
 });
 
 export const metadata: Metadata = {
-  title: "Neon Code Studio | Kevin van Deventer — Full-Stack Developer",
-  description: "Professional Web Development Studio specializing in high-performance React, TypeScript, and modern AI-powered applications.",
+  metadataBase: new URL("https://neon-code-studio.com"),
+  title: {
+    default: "FullWebDevKev | Kevin van Deventer — Full-Stack Developer",
+    template: "%s | FullWebDevKev"
+  },
+  description: "Professional Web Development by FullWebDevKev (Kevin van Deventer). Specializing in high-performance React, TypeScript, and AI-powered applications.",
+  keywords: ["Full-Stack Developer", "React Expert", "Next.js Development", "Web Engineering", "UI/UX Design", "Kevin van Deventer", "FullWebDevKev"],
   authors: [{ name: "Kevin van Deventer" }],
+  creator: "Kevin van Deventer",
+  alternates: {
+    canonical: "/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   openGraph: {
-    title: "Neon Code Studio — Build Something Epic",
-    description: "High-performance websites and applications built with cutting-edge tech stacks.",
+    title: "FullWebDevKev | Kevin van Deventer",
+    description: "High-performance websites and applications built with cutting-edge tech stacks by Kevin van Deventer.",
+    url: "https://neon-code-studio.com",
+    siteName: "FullWebDevKev",
+    locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    site: "@vudovn",
+    title: "FullWebDevKev | Kevin van Deventer",
+    description: "High-performance web engineering and modern UI/UX design.",
+    creator: "@vudovn",
   },
 };
 
@@ -45,7 +70,7 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "ProfessionalService",
-              name: "Neon Code Studio",
+              name: "FullWebDevKev",
               image: "/og-image.png",
               "@id": "https://neon-code-studio.com",
               url: "https://neon-code-studio.com",

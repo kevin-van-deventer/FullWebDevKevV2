@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Code2, AppWindow, Smartphone, Gauge, Zap } from "lucide-react";
+import { Code2, AppWindow, Gauge, Zap } from "lucide-react";
 import { AnimatedTitle } from "./AnimatedTitle";
 import type { LucideIcon } from "lucide-react";
 

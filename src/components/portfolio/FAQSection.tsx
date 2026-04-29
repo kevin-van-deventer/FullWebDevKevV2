@@ -81,6 +81,23 @@ export function FAQSection() {
 
   return (
     <section id="faq" className="mx-auto max-w-[1400px]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: faqs.map((f) => ({
+              "@type": "Question",
+              name: f.question,
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: f.answer,
+              },
+            })),
+          }),
+        }}
+      />
       <div className="panel p-6 md:p-10 relative overflow-visible">
         <AnimatedTitle 
           title="Frequently Asked Questions" 
