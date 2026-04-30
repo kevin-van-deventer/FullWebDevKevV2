@@ -17,6 +17,7 @@ To ensure your portfolio looks elite when shared on social media, the following 
 
 ```html
 <!-- Open Graph / Facebook / LinkedIn / WhatsApp / Zalo -->
+<!-- Recommended size: 1200 x 630 (Less than 300KB for WhatsApp) -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://fullwebdevkev.com">
 <meta property="og:title" content="FullWebDevKev | Kevin van Deventer">
