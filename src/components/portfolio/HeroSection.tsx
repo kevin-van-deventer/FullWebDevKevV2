@@ -12,46 +12,47 @@ export function HeroSection() {
       id="home"
       className="relative mx-auto max-w-[1400px] overflow-hidden px-4 pt-6 pb-12 md:px-6 md:pt-12"
     >
-      <div className="panel relative overflow-hidden rounded-lg border-2 border-gold/50 shadow-[0_0_60px_rgba(255,122,0,0.2)]">
-        {/* Background area - Now strictly absolute to stay BEHIND everything */}
+      <div className="panel relative flex flex-col overflow-hidden rounded-lg border-2 border-gold/50 shadow-[0_0_60px_rgba(255,122,0,0.2)] md:block">
+        {/* Background area - Strictly absolute behind everything */}
         <div className="absolute inset-0 z-0 h-full w-full">
           <Image
             src={heroImg}
-            alt="Kevin van Deventer — Full-Stack Web Developer"
+            alt="Background"
             fill
             sizes="100vw"
             priority
             className="object-cover"
           />
-          {/* Readability overlays */}
-          <div className="absolute inset-0 bg-gradient-to-b from-background/95 via-background/60 to-background/90 md:bg-gradient-to-r md:from-background/95 md:via-background/60 md:to-background/10" />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/60 to-background/95 md:bg-gradient-to-r md:from-background/95 md:via-background/60 md:to-background/10" />
         </div>
 
-        {/* Cartoon character - Repositioned for mobile behind content but above background */}
-        <div className="pointer-events-none absolute inset-0 z-10 overflow-visible">
+        {/* Character Section - TOP on mobile, RIGHT on desktop */}
+        <div className="relative z-10 flex h-[320px] w-full items-end justify-center overflow-hidden border-b border-gold/20 md:absolute md:inset-0 md:h-full md:border-0">
           <motion.div
-            initial={{ opacity: 0, y: 50, scale: 0.9 }}
+            initial={{ opacity: 0, y: 50, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-            className="absolute right-[-10%] bottom-[-5%] h-[40%] w-auto sm:right-0 sm:h-[60%] md:right-0 md:bottom-[-5%] md:h-[110%]"
+            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+            className="relative h-[90%] w-auto md:absolute md:right-[-5%] md:bottom-[-5%] md:h-[110%]"
           >
             <Image
               src={characterImg}
               alt="Cartoon Kevin"
-              className="h-full w-auto object-contain object-bottom opacity-30 md:opacity-100"
+              className="h-full w-auto object-contain object-bottom md:opacity-100"
               priority
             />
+            {/* Mobile-only spotlight glow behind character */}
+            <div className="absolute inset-0 -z-10 bg-gold/10 blur-3xl md:hidden" />
           </motion.div>
         </div>
 
-        {/* Foreground content - Relative so it stacks properly and overlays the absolute background */}
-        <div className="relative z-20 flex w-full flex-col px-6 py-12 sm:px-10 md:min-h-[500px] md:flex-row md:items-center md:px-12 md:py-16">
+        {/* Content Section - BELOW character on mobile, overlay on desktop */}
+        <div className="relative z-20 flex w-full flex-col px-6 py-10 sm:px-10 md:absolute md:inset-0 md:flex-row md:items-center md:px-12 md:py-0">
           <div className="max-w-xl">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="mb-8 inline-flex items-center gap-2 rounded-md border border-gold/60 bg-background/80 px-3 py-1 text-[10px] font-bold tracking-widest text-gold backdrop-blur-sm"
+              transition={{ duration: 0.5, delay: 0.4 }}
+              className="mb-6 inline-flex items-center gap-2 rounded-md border border-gold/60 bg-background/80 px-3 py-1 text-[10px] font-bold tracking-widest text-gold backdrop-blur-sm"
             >
               <Sparkles className="h-3.5 w-3.5" /> AVAILABLE FOR HIRE
             </motion.div>
@@ -59,7 +60,7 @@ export function HeroSection() {
             <motion.h1
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
               className="font-display text-5xl leading-[0.85] sm:text-7xl md:text-8xl lg:text-9xl"
             >
               <span className="text-stroke-comic block text-foreground drop-shadow-[0_4px_0_rgba(0,0,0,0.6)]">
@@ -73,8 +74,8 @@ export function HeroSection() {
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="mt-10 flex max-w-md items-start gap-4 rounded-md border border-border bg-background/60 p-5 backdrop-blur-md"
+              transition={{ duration: 0.5, delay: 0.6 }}
+              className="mt-8 flex max-w-md items-start gap-4 rounded-md border border-border bg-background/60 p-5 backdrop-blur-md"
             >
               <span className="grid h-10 w-10 shrink-0 place-items-center rounded-md border border-border bg-background text-gold shadow-sm">
                 <Code2 className="h-5 w-5" />
@@ -89,8 +90,8 @@ export function HeroSection() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              className="mt-10 flex flex-col gap-4 sm:flex-row"
+              transition={{ duration: 0.5, delay: 0.7 }}
+              className="mt-8 flex flex-col gap-4 sm:flex-row"
             >
               <a
                 href="#projects"
