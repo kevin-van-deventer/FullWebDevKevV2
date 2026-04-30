@@ -39,6 +39,24 @@ To ensure your portfolio looks elite when shared on social media, the following 
 > [!TIP]
 > **WhatsApp & Zalo Support**: The `fwdk_link_preview_image.jpg` is optimized to **~176KB**, meeting the strict <300KB requirement for mobile messaging previews.
 
+## 🛰️ Google Tag Manager & Cloudflare Gateway
+
+Your portfolio is equipped with **Google Tag Manager (GTM)** to centralize all tracking pixels (GA4, LinkedIn, Facebook, etc.) without slowing down the frontend.
+
+### 1. GTM Setup (Client-Side)
+The GTM container `GTM-PQGTGTJC` is already integrated into `src/app/layout.tsx`. To add new tags:
+1.  Log in to [Google Tag Manager](https://tagmanager.google.com/).
+2.  Add your tags (e.g., GA4 Configuration).
+3.  Publish the container—your site will update automatically without a new deployment.
+
+### 2. Cloudflare Tag Gateway (Zaraz) Integration
+For elite performance and privacy, you can use **Cloudflare Zaraz** to load GTM at the edge:
+1.  Log in to the **Cloudflare Dashboard**.
+2.  Navigate to **Zaraz** → **Tools** → **Third-party Tools**.
+3.  Click **Add Tool** and select **Google Tag Manager**.
+4.  Enter your ID: `GTM-PQGTGTJC`.
+5.  Cloudflare will now handle the script execution, significantly improving your **Lighthouse Performance** scores by reducing main-thread blocking time.
+
 ## 🛠️ Tech Stack
 
 - **Core**: [Next.js 15+](https://nextjs.org) (App Router)
