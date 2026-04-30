@@ -9,18 +9,22 @@ The high-performance, premium web development portfolio of **Kevin van Deventer*
 - [x] **Reliable Communication**: Integrated **Formspree** to replace complex backend logic, ensuring 100% email delivery reliability without edge conflicts.
 - [x] **Elite UX**: Implemented **Lenis Smooth Scroll** and **Framer Motion** for a silky-smooth, momentum-based browsing experience.
 - [x] **Favicon Overhaul**: Perfectly placed and linked all your new branding assets for browsers and mobile devices.
+- [x] **Custom 404 Experience**: Built a branded "Mission Failed" page to keep users engaged even during navigation errors.
 
-## 🌐 Social Meta Tags (OG & Twitter)
+## 🌐 Social Meta Tags (WhatsApp, Zalo, FB, LinkedIn)
 
-To ensure your portfolio looks elite when shared on social media, the following meta tags are pre-configured:
+To ensure your portfolio looks elite when shared on social media, the following meta tags are pre-configured. These tags are specifically optimized for **WhatsApp** and **Zalo** by keeping the preview image under **300KB** and providing explicit dimensions.
 
 ```html
-<!-- Open Graph / Facebook / LinkedIn -->
+<!-- Open Graph / Facebook / LinkedIn / WhatsApp / Zalo -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://fullwebdevkev.com">
 <meta property="og:title" content="FullWebDevKev | Kevin van Deventer">
 <meta property="og:description" content="High-performance websites and applications built with cutting-edge tech stacks by Kevin van Deventer.">
 <meta property="og:image" content="https://fullwebdevkev.com/fwdk_link_preview_image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:type" content="image/jpeg">
 <meta property="og:site_name" content="FullWebDevKev">
 
 <!-- Twitter / X -->
@@ -31,7 +35,8 @@ To ensure your portfolio looks elite when shared on social media, the following 
 <meta property="twitter:image" content="https://fullwebdevkev.com/fwdk_link_preview_image.jpg">
 ```
 
-- [x] **Custom 404 Experience**: Built a branded "Mission Failed" page to keep users engaged even during navigation errors.
+> [!TIP]
+> **WhatsApp & Zalo Support**: The `fwdk_link_preview_image.jpg` is optimized to **~176KB**, meeting the strict <300KB requirement for mobile messaging previews.
 
 ## 🛠️ Tech Stack
 
@@ -52,14 +57,13 @@ The project is optimized for **Cloudflare Pages** using the Static Export method
 - **Build output directory**: `out`
 
 ### Environment Variables:
-- `NEXT_PUBLIC_FORMSPREE_ID`: Your unique Formspree form ID.
+- `NEXT_PUBLIC_FORMSPREE_ID`: `xdabnqll`
 - `NEXT_PUBLIC_SITE_URL`: `https://fullwebdevkev.com`
 
 ## 🗺️ Mission Roadmap (To-Do)
 
 ### 📈 SEO & Visibility
 - [ ] **SEO Analysis**: Perform a deep audit using Ahrefs or SEMrush to optimize keyword density.
-- [ ] **OpenGraph / Twitter Cards**: Finalize and verify social media thumbnails for perfect sharing previews.
 - [ ] **Schema.org**: Further refine JSON-LD structured data for better "Rich Results" in Google Search.
 
 ### 📊 Analytics & Tracking
