@@ -30,14 +30,33 @@ export function HireMeSection() {
   const onSubmit = async (data: FormData) => {
     setIsSending(true);
     
-    // Simulate encryption and secure transmission
-    await new Promise((resolve) => setTimeout(resolve, 2000));
-    
-    setIsSending(false);
-    setIsSubmitted(true);
-    toast.success("Mission Briefing Received! I'll contact you soon.");
-    reset();
-    setTimeout(() => setIsSubmitted(false), 5000);
+    // Use your specific Formspree ID
+    const formspreeId = process.env.NEXT_PUBLIC_FORMSPREE_ID || "xdabnqll"; 
+
+    try {
+      const response = await fetch(`https://formspree.io/f/${formspreeId}`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        setIsSubmitted(true);
+        toast.success("Mission Briefing Received! I'll contact you soon.");
+        reset();
+        setTimeout(() => setIsSubmitted(false), 5000);
+      } else {
+        toast.error("Mission Failed: Error sending briefing. Please try again.");
+      }
+    } catch (error) {
+      console.error("Formspree Error:", error);
+      toast.error("Mission Failed: Could not connect to the briefing server.");
+    } finally {
+      setIsSending(false);
+    }
   };
 
   return (
