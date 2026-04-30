@@ -68,7 +68,7 @@ The project is optimized for **Cloudflare Pages** using the Static Export method
 - [ ] **Schema.org**: Further refine JSON-LD structured data for better "Rich Results" in Google Search.
 
 ### 📊 Analytics & Tracking
-- [ ] **Google Tag Manager**: Integrate GTM for centralized pixel management.
+- [x] **Google Tag Manager**: Integrate GTM for centralized pixel management.
 - [ ] **Google Analytics 4**: Set up conversion tracking for form submissions.
 - [ ] **Microsoft Clarity**: Implement heatmaps to analyze user behavior.
 
