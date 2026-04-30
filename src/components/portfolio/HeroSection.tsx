@@ -33,12 +33,12 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 50, scale: 0.9 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-            className="absolute right-[-10%] bottom-[-5%] h-[40%] w-auto sm:right-0 sm:h-[60%] md:right-0 md:bottom-[-5%] md:h-[110%]"
+            className="absolute right-[-5%] bottom-[-5%] h-[40%] w-auto sm:right-0 sm:h-[60%] md:right-0 md:bottom-[-5%] md:h-[110%]"
           >
             <Image
               src={characterImg}
               alt="Cartoon Kevin"
-              className="h-full w-auto object-contain object-bottom opacity-30 md:opacity-100"
+              className="h-full w-auto object-contain object-bottom opacity-60 md:opacity-100"
               priority
             />
           </motion.div>
