@@ -8,7 +8,28 @@ The high-performance, premium web development portfolio of **Kevin van Deventer*
 - [x] **Static Stability**: Transitioned to a **100% Static Next.js App** for lightning-fast load times and zero server-side errors.
 - [x] **Reliable Communication**: Integrated **Formspree** to replace complex backend logic, ensuring 100% email delivery reliability without edge conflicts.
 - [x] **Elite UX**: Implemented **Lenis Smooth Scroll** and **Framer Motion** for a silky-smooth, momentum-based browsing experience.
-- [x] **Favicon & Asset Overhaul**: Deployed a complete set of branded favicons and app icons for all browsers and devices.
+- [x] **Favicon Overhaul**: Perfectly placed and linked all your new branding assets for browsers and mobile devices.
+
+## 🌐 Social Meta Tags (OG & Twitter)
+
+To ensure your portfolio looks elite when shared on social media, the following meta tags are pre-configured:
+
+```html
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://fullwebdevkev.com">
+<meta property="og:title" content="FullWebDevKev | Kevin van Deventer">
+<meta property="og:description" content="High-performance websites and applications built with cutting-edge tech stacks by Kevin van Deventer.">
+<meta property="og:image" content="https://fullwebdevkev.com/hero-developer.jpg">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://fullwebdevkev.com">
+<meta property="twitter:title" content="FullWebDevKev | Kevin van Deventer">
+<meta property="twitter:description" content="High-performance web engineering and modern UI/UX design.">
+<meta property="twitter:image" content="https://fullwebdevkev.com/hero-developer.jpg">
+```
+
 - [x] **Custom 404 Experience**: Built a branded "Mission Failed" page to keep users engaged even during navigation errors.
 
 ## 🛠️ Tech Stack
