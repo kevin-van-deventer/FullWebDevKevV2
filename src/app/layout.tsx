@@ -63,7 +63,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/hero-developer.jpg",
+        url: "/fwdk_link_preview_image.jpg",
         width: 1200,
         height: 630,
         alt: "FullWebDevKev — Full-Stack Developer",
@@ -75,7 +75,7 @@ export const metadata: Metadata = {
     title: "FullWebDevKev | Kevin van Deventer",
     description: "High-performance web engineering and modern UI/UX design.",
     creator: "@vudovn",
-    images: ["/hero-developer.jpg"],
+    images: ["/fwdk_link_preview_image.jpg"],
   },
 };
 
@@ -94,7 +94,7 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "ProfessionalService",
               name: "FullWebDevKev",
-              image: "/hero-developer.jpg",
+              image: "/fwdk_link_preview_image.jpg",
               "@id": "https://fullwebdevkev.com",
               url: "https://fullwebdevkev.com",
               telephone: "+27123456789",

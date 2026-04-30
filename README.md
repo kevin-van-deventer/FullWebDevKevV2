@@ -15,19 +15,20 @@ The high-performance, premium web development portfolio of **Kevin van Deventer*
 To ensure your portfolio looks elite when shared on social media, the following meta tags are pre-configured:
 
 ```html
-<!-- Open Graph / Facebook -->
+<!-- Open Graph / Facebook / LinkedIn -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://fullwebdevkev.com">
 <meta property="og:title" content="FullWebDevKev | Kevin van Deventer">
 <meta property="og:description" content="High-performance websites and applications built with cutting-edge tech stacks by Kevin van Deventer.">
-<meta property="og:image" content="https://fullwebdevkev.com/hero-developer.jpg">
+<meta property="og:image" content="https://fullwebdevkev.com/fwdk_link_preview_image.jpg">
+<meta property="og:site_name" content="FullWebDevKev">
 
-<!-- Twitter -->
+<!-- Twitter / X -->
 <meta property="twitter:card" content="summary_large_image">
 <meta property="twitter:url" content="https://fullwebdevkev.com">
 <meta property="twitter:title" content="FullWebDevKev | Kevin van Deventer">
 <meta property="twitter:description" content="High-performance web engineering and modern UI/UX design.">
-<meta property="twitter:image" content="https://fullwebdevkev.com/hero-developer.jpg">
+<meta property="twitter:image" content="https://fullwebdevkev.com/fwdk_link_preview_image.jpg">
 ```
 
 - [x] **Custom 404 Experience**: Built a branded "Mission Failed" page to keep users engaged even during navigation errors.
