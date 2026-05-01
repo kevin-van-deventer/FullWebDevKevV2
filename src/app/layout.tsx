@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Bungee } from "next/font/google";
 import { FloatingWhatsApp } from "@/components/portfolio/FloatingWhatsApp";
 import { SmoothScroll } from "@/components/portfolio/SmoothScroll";
+import { GoogleAnalytics, GoogleTagManager } from '@next/third-parties/google';
 import "./globals.css";
 
 const inter = Inter({
@@ -18,7 +19,7 @@ const bungee = Bungee({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://fullwebdevkev.com"),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://fullwebdevkev.com"),
   title: {
     default: "FullWebDevKev | Kevin van Deventer — Full-Stack Developer",
     template: "%s | FullWebDevKev"
@@ -88,17 +89,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${bungee.variable} antialiased`}>
       <head>
-        {/* Google Tag Manager */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-            })(window,document,'script','dataLayer','GTM-PQGTGTJC');`,
-          }}
-        />
-        {/* End Google Tag Manager */}
+        <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM_ID!} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -138,20 +129,11 @@ export default function RootLayout({
         />
       </head>
       <body className="antialiased">
-        {/* Google Tag Manager (noscript) */}
-        <noscript>
-          <iframe
-            src="https://www.googletagmanager.com/ns.html?id=GTM-PQGTGTJC"
-            height="0"
-            width="0"
-            style={{ display: "none", visibility: "hidden" }}
-          />
-        </noscript>
-        {/* End Google Tag Manager (noscript) */}
         <SmoothScroll>
           {children}
           <FloatingWhatsApp />
         </SmoothScroll>
+        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID!} />
       </body>
     </html>
   );
