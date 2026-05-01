@@ -82,8 +82,9 @@ export default function RootLayout({ children }) {
 ## 📏 05. Performance & Core Web Vitals
 | TASK | 💡 WHY IT MATTERS |
 | :--- | :--- |
-| ☐ **next/image Optimization** | Automatically serves WebP/AVIF and prevents Layout Shift (CLS). |
-| ☐ **next/font (Self-Hosted)** | Hosts fonts locally to eliminate FOIT (Flash of Unstyled Text). |
+| [x] **next/image Optimization** | Automatically serves WebP/AVIF and prevents Layout Shift (CLS). |
+| [x] **next/font (Self-Hosted)** | Hosts fonts locally to eliminate FOIT (Flash of Unstyled Text). |
+| [x] **Tailwind v4 (Auto-Scanning)** | Uses Tailwind v4 for automatic bundle optimization and zero-config scanning. |
 | ☐ **Partial Prerendering (PPR)** | Use Next.js 15+ PPR to combine static shell with dynamic content. |
 
 ---
