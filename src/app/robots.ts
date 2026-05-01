@@ -1,14 +1,14 @@
 import { MetadataRoute } from "next";
 
-export const dynamic = "force-static";
-
 export default function robots(): MetadataRoute.Robots {
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://fullwebdevkev.com";
+
   return {
     rules: {
       userAgent: "*",
       allow: "/",
-      disallow: "/private/",
+      disallow: ["/private/", "/admin", "/api"],
     },
-    sitemap: "https://fullwebdevkev.com/sitemap.xml",
+    sitemap: `${baseUrl}/sitemap.xml`,
   };
 }

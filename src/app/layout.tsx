@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Bungee } from "next/font/google";
 import { FloatingWhatsApp } from "@/components/portfolio/FloatingWhatsApp";
 import { SmoothScroll } from "@/components/portfolio/SmoothScroll";
-import { GoogleAnalytics, GoogleTagManager } from '@next/third-parties/google';
+import { GoogleTagManager } from '@next/third-parties/google';
 import "./globals.css";
 
 const inter = Inter({
@@ -62,22 +62,12 @@ export const metadata: Metadata = {
     siteName: "FullWebDevKev",
     locale: "en_US",
     type: "website",
-    images: [
-      {
-        url: "/fwdk_link_preview_image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "FullWebDevKev — Full-Stack Developer",
-        type: "image/jpeg",
-      },
-    ],
-  },
+    },
   twitter: {
     card: "summary_large_image",
     title: "FullWebDevKev | Kevin van Deventer",
     description: "High-performance web engineering and modern UI/UX design.",
     creator: "@vudovn",
-    images: ["/fwdk_link_preview_image.jpg"],
   },
 };
 
@@ -133,7 +123,6 @@ export default function RootLayout({
           {children}
           <FloatingWhatsApp />
         </SmoothScroll>
-        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID!} />
       </body>
     </html>
   );

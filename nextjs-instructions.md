@@ -9,14 +9,14 @@ Welcome to the definitive guide for building lightning-fast, search-optimized Ne
 | :--- | :--- |
 | ☐ **Use Next.js 16+ (App Router)** | Latest stable standard for modern web development. |
 | ☐ **Latest Stable Versions** | Always use the latest stable versions of the tech stack (React, Tailwind, etc.) to ensure security and performance. |
-| ☐ **Dynamic Sitemap (sitemap.ts)** | Use `app/sitemap.ts` to automatically add new pages (blog/projects). |
-| ☐ **Robots.txt (robots.ts)** | Tells crawlers where they shouldn't go (e.g., /admin or /api). |
-| ☐ **metadataBase Setting** | Set `metadataBase: new URL('https://fullwebdevkev.com')` in root layout. |
-| ☐ **Enforce HTTPS** | Critical Google ranking signal and requirement for HTTP/2. |
-| ☐ **Environment Variables** | Use `.env.local` for keys; use `NEXT_PUBLIC_` for client-side access. |
-| ☐ **GTM & Analytics IDs** | Add `NEXT_PUBLIC_GTM_ID` and `NEXT_PUBLIC_GA_ID` to `.env.local`. |
-| ☐ **Formspree Integration** | Add `NEXT_PUBLIC_FORMSPREE_ID` for contact form handling. |
-| ☐ **Site URL Configuration**| Add `NEXT_PUBLIC_SITE_URL` for SEO and metadata canonicals. |
+| [x] **Dynamic Sitemap (sitemap.ts)** | Use `app/sitemap.ts` to automatically add new pages (blog/projects). |
+| [x] **Robots.txt (robots.ts)** | Tells crawlers where they shouldn't go (e.g., /admin or /api). |
+| [x] **metadataBase Setting** | Set `metadataBase` using `NEXT_PUBLIC_SITE_URL` in root layout. |
+| [x] **Enforce HTTPS** | Critical Google ranking signal and requirement for HTTP/2. |
+| [x] **Environment Variables** | Use `.env.local` for keys; use `NEXT_PUBLIC_` for client-side access. |
+| [x] **GTM & Analytics IDs** | Add `NEXT_PUBLIC_GTM_ID` and `NEXT_PUBLIC_GA_ID` to `.env.local`. |
+| [x] **Formspree Integration** | Add `NEXT_PUBLIC_FORMSPREE_ID` for contact form handling. |
+| [x] **Site URL Configuration**| Add `NEXT_PUBLIC_SITE_URL` for SEO and metadata canonicals. |
 
 ---
 
@@ -52,7 +52,7 @@ npm install @next/third-parties@latest
 2. **Root Layout Integration**:
 Add the components to `app/layout.tsx`. These are optimized to load after the page is interactive.
 ```typescript
-import { GoogleAnalytics, GoogleTagManager } from '@next/third-parties/google'
+import { GoogleTagManager } from '@next/third-parties/google'
 
 export default function RootLayout({ children }) {
   return (
@@ -62,7 +62,6 @@ export default function RootLayout({ children }) {
       </head>
       <body>
         {children}
-        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID!} />
       </body>
     </html>
   )
@@ -74,9 +73,9 @@ export default function RootLayout({ children }) {
 ## 🏷️ 04. The Metadata API (Crucial for Social & Search)
 | TASK | 💡 WHY IT MATTERS |
 | :--- | :--- |
-| ☐ **Static Metadata** | Export a `metadata` object in `layout.tsx` or `page.tsx`. |
+| [x] **Static Metadata** | Export a `metadata` object in `layout.tsx` or `page.tsx`. |
 | ☐ **Dynamic Metadata** | Use `generateMetadata` for dynamic routes to ensure unique identities. |
-| ☐ **opengraph-image.tsx** | Use Next.js 14+ built-in OG image generator for high-quality social previews. |
+| [x] **opengraph-image.tsx** | Use Next.js 14+ built-in OG image generator for high-quality social previews. |
 
 ---
 

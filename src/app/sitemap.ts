@@ -1,15 +1,15 @@
 import { MetadataRoute } from "next";
 
-export const dynamic = "force-static";
-
 export default function sitemap(): MetadataRoute.Sitemap {
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://fullwebdevkev.com";
+  
   return [
     {
-      url: "https://fullwebdevkev.com",
+      url: baseUrl,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 1,
     },
-    // Add more pages here as the site grows
+    // Add dynamic logic here as pages are added (e.g. from a CMS or database)
   ];
 }
