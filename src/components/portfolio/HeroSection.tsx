@@ -10,11 +10,11 @@ export function HeroSection() {
   return (
     <section
       id="home"
-      className="relative mx-auto max-w-[1400px] overflow-hidden px-4 pt-6 pb-12 md:px-6 md:pt-12"
+      className="relative mx-auto max-w-[1400px] px-4 pt-6 pb-12 md:px-6 md:pt-12"
     >
-      <div className="panel relative overflow-hidden rounded-lg border-2 border-gold/50 shadow-[0_0_60px_rgba(255,122,0,0.2)]">
+      <div className="panel relative z-0 overflow-visible rounded-lg border-2 border-gold/50 shadow-[0_0_60px_rgba(255,122,0,0.2)]">
         {/* Background area - Now strictly absolute to stay BEHIND everything */}
-        <div className="absolute inset-0 z-0 h-full w-full">
+        <div className="absolute inset-0 z-0 h-full w-full overflow-hidden rounded-lg">
           <Image
             src={heroImg}
             alt="Kevin van Deventer — Full-Stack Web Developer"
@@ -27,24 +27,24 @@ export function HeroSection() {
           <div className="absolute inset-0 bg-gradient-to-b from-background/95 via-background/60 to-background/90 md:bg-gradient-to-r md:from-background/95 md:via-background/60 md:to-background/10" />
         </div>
 
-        {/* Cartoon character - Repositioned for mobile behind content but above background */}
+        {/* Cartoon character - Now inside the panel but above background, below content */}
         <div className="pointer-events-none absolute inset-0 z-10 overflow-visible">
           <motion.div
-            initial={{ opacity: 0, y: 50, scale: 0.9 }}
+            initial={{ opacity: 0, y: 80, scale: 0.9 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-            className="absolute right-[-5%] bottom-[-5%] h-[40%] w-auto sm:right-0 sm:h-[60%] md:right-0 md:bottom-[-5%] md:h-[110%]"
+            transition={{ duration: 0.8, delay: 0.4, ease: "backOut" }}
+            className="absolute right-[-10%] bottom-0 h-[40%] w-auto sm:right-[-5%] sm:h-[60%] md:right-[-2%] md:bottom-0 md:h-[108%]"
           >
             <Image
               src={characterImg}
               alt="Cartoon Kevin"
-              className="h-full w-auto object-contain object-bottom opacity-60 md:opacity-100"
+              className="h-full w-auto object-contain object-bottom drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)] md:opacity-100"
               priority
             />
           </motion.div>
         </div>
 
-        {/* Foreground content - Relative so it stacks properly and overlays the absolute background */}
+        {/* Foreground content - Relative z-20 to be above character */}
         <div className="relative z-20 flex w-full flex-col px-6 py-12 sm:px-10 md:min-h-[500px] md:flex-row md:items-center md:px-12 md:py-16">
           <div className="max-w-xl">
             <motion.div
@@ -80,9 +80,9 @@ export function HeroSection() {
                 <Code2 className="h-5 w-5" />
               </span>
               <span className="text-sm font-medium leading-relaxed text-foreground/95 md:text-base">
-                I build <span className="font-bold text-gold">fast</span>,{" "}
+                <span className="font-bold text-gold">Kevin van Deventer</span> is a Full-Stack Web Engineer building <span className="font-bold text-gold">fast</span>,{" "}
                 <span className="font-bold text-gold">responsive</span> and{" "}
-                <span className="font-bold text-gold">beautiful</span> websites.
+                <span className="font-bold text-gold">beautiful</span> digital solutions.
               </span>
             </motion.p>
 

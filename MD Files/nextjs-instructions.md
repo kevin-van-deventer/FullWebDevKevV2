@@ -4,6 +4,12 @@ Welcome to the definitive guide for building lightning-fast, search-optimized Ne
 
 ---
 
+## 🤖 AI Interaction & Manual Guidance Rule
+> [!IMPORTANT]
+> If any task or instruction requires the developer to perform manual work outside of the Antigravity environment (e.g., Cloudflare Dashboard settings, external asset optimization, or secret management), the AI **MUST** provide a clear, numbered, step-by-step guide and provide the necessary resources (links, tool names) to complete the task successfully.
+
+---
+
 ## 🏗️ 01. Core Architecture (Dynamic/SEO-Heavy)
 *Best for: Furniture Shop (Product catalogs), Blog-style Company sites.*
 

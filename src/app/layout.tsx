@@ -18,16 +18,18 @@ const bungee = Bungee({
   display: "swap",
 });
 
+import { siteConfig } from "@/config/site";
+
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://fullwebdevkev.com"),
+  metadataBase: new URL(siteConfig.url),
   title: {
-    default: "FullWebDevKev | Kevin van Deventer — Full-Stack Developer",
-    template: "%s | FullWebDevKev"
+    default: `${siteConfig.name} | ${siteConfig.author} — Full-Stack Developer`,
+    template: `%s | ${siteConfig.name}`
   },
-  description: "Professional Web Development by FullWebDevKev (Kevin van Deventer). Specializing in high-performance React, TypeScript, and AI-powered applications.",
+  description: siteConfig.description,
   keywords: ["Full-Stack Developer", "React Expert", "Next.js Development", "Web Engineering", "UI/UX Design", "Kevin van Deventer", "FullWebDevKev"],
-  authors: [{ name: "Kevin van Deventer" }],
-  creator: "Kevin van Deventer",
+  authors: [{ name: siteConfig.author }],
+  creator: siteConfig.author,
   alternates: {
     canonical: "/",
   },
@@ -56,18 +58,18 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "FullWebDevKev | Kevin van Deventer",
-    description: "High-performance websites and applications built with cutting-edge tech stacks by Kevin van Deventer.",
-    url: "https://fullwebdevkev.com",
-    siteName: "FullWebDevKev",
+    title: `${siteConfig.name} | ${siteConfig.author}`,
+    description: siteConfig.description,
+    url: siteConfig.url,
+    siteName: siteConfig.name,
     locale: "en_US",
     type: "website",
     },
   twitter: {
     card: "summary_large_image",
-    title: "FullWebDevKev | Kevin van Deventer",
-    description: "High-performance web engineering and modern UI/UX design.",
-    creator: "@vudovn",
+    title: `${siteConfig.name} | ${siteConfig.author}`,
+    description: siteConfig.description,
+    creator: siteConfig.links.twitter.split("/").pop(),
   },
 };
 
@@ -86,17 +88,17 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "ProfessionalService",
-              name: "FullWebDevKev",
+              name: siteConfig.name,
               image: "/fwdk_link_preview_image.jpg",
-              "@id": "https://fullwebdevkev.com",
-              url: "https://fullwebdevkev.com",
-              telephone: "+27123456789",
+              "@id": siteConfig.url,
+              url: siteConfig.url,
+              telephone: siteConfig.contact.telephone,
               address: {
                 "@type": "PostalAddress",
-                streetAddress: "123 Dev Street",
-                addressLocality: "Cape Town",
-                postalCode: "8001",
-                addressCountry: "ZA",
+                streetAddress: siteConfig.contact.address.street,
+                addressLocality: siteConfig.contact.address.city,
+                postalCode: siteConfig.contact.address.zip,
+                addressCountry: siteConfig.contact.address.country,
               },
               geo: {
                 "@type": "GeoCoordinates",
@@ -109,11 +111,7 @@ export default function RootLayout({
                 opens: "09:00",
                 closes: "18:00",
               },
-              sameAs: [
-                "https://github.com/kevin-van-deventer",
-                "https://linkedin.com/in/kevin-van-deventer",
-                "https://wa.me/84582168746"
-              ],
+              sameAs: Object.values(siteConfig.links),
             }),
           }}
         />

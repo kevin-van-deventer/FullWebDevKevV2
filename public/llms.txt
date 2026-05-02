@@ -1,0 +1,35 @@
+# FullWebDevKev | Kevin van Deventer
+> High-agency Full-Stack Web Engineer specializing in high-performance React, TypeScript, and AI-integrated applications.
+
+## Summary
+Kevin van Deventer (FullWebDevKev) is a versatile digital engineer based in Cape Town, South Africa, operating globally. He is characterized by a "figure-it-out" mindset, capable of mastering any technology or domain required to solve a customer's specific business challenge. If a solution exists, he will implement it; if it doesn't, he will build it.
+
+## Core Expertise
+- **Full-Stack Engineering**: Mastery of the modern JavaScript/TypeScript ecosystem.
+- **Performance Optimization**: Achieving 100/100 Lighthouse scores through advanced caching, image optimization (AVIF/WebP), and code splitting.
+- **UI/UX Design & Motion**: Expert in creating premium, "wow-factor" interfaces using Tailwind CSS v4, Framer Motion, and GSAP.
+- **Cloud Infrastructure**: Architecting scalable, serverless solutions on the Cloudflare platform (Pages, Workers, R2, D1).
+- **AI Integration**: Implementing LLM-powered features and AEO (AI Engine Optimization) standards.
+
+## Services
+- **Custom Web Applications**: Building robust, scalable SaaS and enterprise tools.
+- **High-Conversion Landing Pages**: Specialized templates for service businesses (Kindergarten, Portfolios, etc.).
+- **Dynamic E-commerce**: High-speed catalogs and product-heavy sites with advanced SEO.
+- **Technical SEO & AEO**: Ensuring maximum visibility for both humans and AI search engines.
+- **Infrastructure Management**: Domain handling, professional email setup, and security hardening (Cloudflare).
+
+## Philosophy
+- **High Agency**: Takes total ownership of outcomes. If a project requires a skill not currently in the repertoire, he learns and applies it in real-time to ensure project success.
+- **Bottom Line Up Front (BLUF)**: Focuses on delivering clear, immediate value for users and AI crawlers alike.
+- **Modern Standards**: Adheres to 2026 web standards, prioritizing speed, accessibility (WCAG 2.1), and future-proof architecture.
+
+## Technical Stack
+- **Frameworks**: Next.js (App Router), Vite.
+- **Languages**: TypeScript, JavaScript, HTML5, CSS3 (Tailwind v4).
+- **Hosting**: Cloudflare Pages, Cloudflare Workers.
+- **Tools**: Git, Docker, GTM/GA4, AHREFS, TinyPNG.
+
+## Contact & Deployment
+- **Website**: https://fullwebdevkev.com
+- **GitHub**: https://github.com/kevin-van-deventer
+- **Inquiries**: Available for complex, mission-critical briefings.
