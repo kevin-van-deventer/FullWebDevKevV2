@@ -6,7 +6,9 @@ Welcome to the definitive guide for building lightning-fast, search-optimized Ne
 
 ## 🤖 AI Interaction & Manual Guidance Rule
 > [!IMPORTANT]
-> If any task or instruction requires the developer to perform manual work outside of the Antigravity environment (e.g., Cloudflare Dashboard settings, external asset optimization, or secret management), the AI **MUST** provide a clear, numbered, step-by-step guide and provide the necessary resources (links, tool names) to complete the task successfully.
+> 1. **Manual Guidance**: If any task requires work outside Antigravity (e.g., Cloudflare Dashboard), the AI **MUST** provide a clear, step-by-step guide and resources.
+> 2. **Centralized TODO**: The AI **MUST** create and maintain a `todo.md` file in the `MD Files` directory. This file must aggregate tasks from **EVERY .md file** located within the `MD Files` folder and act as a live checklist.
+> 3. **TODO Maintenance**: As tasks are completed, the AI should remove them from `todo.md`. Any tasks requiring manual developer verification found in any of the `.md` files **MUST** be added to the `todo.md`.
 
 ---
 
@@ -28,6 +30,7 @@ Welcome to the definitive guide for building lightning-fast, search-optimized Ne
 | :--- | :--- |
 | ☐ **Partial Prerendering (PPR)** | Instant static shells with dynamic "Stock Levels" or "Related Items." |
 | ☐ **next/image Optimization** | Automatic lazy loading, WebP/AVIF serving, and CLS prevention. |
+| ☐ **Responsive Sizes Rule** | **MANDATORY**: Use the `sizes` attribute on all `next/image` components to serve the correct asset size for mobile devices. |
 | ☐ **The Hero "Priority" Rule** | Add `priority` attribute to the Hero image (first image seen). |
 | ☐ **next/font (Self-Hosted)** | Eliminate FOIT by hosting Google Fonts locally. |
 

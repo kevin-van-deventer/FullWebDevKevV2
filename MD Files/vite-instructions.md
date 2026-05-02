@@ -6,7 +6,9 @@ Welcome to the definitive guide for building lightning-fast, search-optimized Vi
 
 ## 🤖 AI Interaction & Manual Guidance Rule
 > [!IMPORTANT]
-> If any task or instruction requires the developer to perform manual work outside of the Antigravity environment (e.g., Cloudflare Dashboard settings, external asset optimization, or secret management), the AI **MUST** provide a clear, numbered, step-by-step guide and provide the necessary resources (links, tool names) to complete the task successfully.
+> 1. **Manual Guidance**: If any task requires work outside Antigravity (e.g., Cloudflare Dashboard), the AI **MUST** provide a clear, step-by-step guide and resources.
+> 2. **Centralized TODO**: The AI **MUST** create and maintain a `todo.md` file in the `MD Files` directory. This file must aggregate tasks from **EVERY .md file** located within the `MD Files` folder and act as a live checklist.
+> 3. **TODO Maintenance**: As tasks are completed, the AI should remove them from `todo.md`. Any tasks requiring manual developer verification found in any of the `.md` files **MUST** be added to the `todo.md`.
 
 ---
 
@@ -39,6 +41,7 @@ Welcome to the definitive guide for building lightning-fast, search-optimized Vi
 | ☐ **Hero Image: Eager** | Add `loading="eager"` or `fetchpriority="high"` to the first image a user sees. |
 | ☐ **Other Images: Lazy** | Add `loading="lazy"` to all non-hero images to save bandwidth. |
 | ☐ **AVIF First Strategy** | Use AVIF format primarily, with WebP as a fallback (80% weight reduction). |
+| ☐ **Responsive Srcset Rule** | **MANDATORY**: Use the `srcset` attribute on all standard `<img>` tags to serve scaled assets for mobile devices. |
 | ☐ **Build-time Compression**| Use `vite-plugin-imagemin` to compress everything in `public/` automatically. |
 
 ---

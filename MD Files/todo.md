@@ -1,44 +1,37 @@
 # 📝 Project Audit TODO List
 
-This list contains the tasks required to bring the current project in full compliance with the updated documentation standards in `MD Files`.
+This list contains the remaining manual tasks and verifications required to bring the project into full compliance with the standards defined in `MD Files`.
 
 ---
 
-## 🚀 Performance (High Priority)
-- [ ] **Optimize Hero Image**: `public/hero-developer.jpg` is currently **2.3MB**. 
-    - Convert to **AVIF** (primary) and **WebP** (fallback).
-    - Aim for a file size under 200KB.
-- [x] **Configure Browser Caching**: Create `public/_headers` and set `Cache-Control` for images and fonts to `max-age=2592000` (1 month).
-- [ ] **Responsive Image Containers**: Audit all components to ensure `next/image` has appropriate `sizes` attributes to prevent mobile users from downloading desktop assets.
+## 🚀 Performance & SEO (Manual Verification)
+- [ ] **Lighthouse Production Audit**: Run `npm run build` then `npm run start` (or deploy to staging) and verify Mobile/Desktop scores are 90+.
+- [ ] **TinyPNG / Asset Final Check**: Verify all images in `public/` and `src/assets/` have been through a compression pass.
+- [ ] **GSC Sitemap Submission**: Once live, ensure `sitemap.xml` is submitted to Google Search Console and "URL Inspection" is requested.
+- [ ] **AEO Audit (AI Summary)**: Ask an AI assistant (Gemini/Claude) to summarize the live site and verify the BLUF method is working effectively.
+- [ ] **Health Audit**: Connect the domain to Ahrefs (Free Tier) to verify weekly health and keyword indexing.
+- [ ] **Deep Audit Tools**: Perform a final pass with **GTmetrix** and **Pingdom** to ensure no bottleneck scripts exist.
 
 ---
 
-## 🔍 SEO & AI Readiness
-- [x] **Add `llms.txt`**: Create `public/llms.txt` with a concise summary of your professional profile and services for AI assistants.
-- [x] **Implement Dynamic OG Image**: Create `src/app/opengraph-image.tsx` using the Next.js Metadata API for high-quality, dynamic social previews.
-- [x] **Refine BLUF Method**: Update the first sentence in `HeroSection.tsx` to be more explicit. 
-    - *Current*: "I build fast, responsive and beautiful websites."
-    - *Proposed*: "Kevin van Deventer is a Full-Stack Web Engineer based in Cape Town, specializing in high-performance React and AI-powered applications."
+## ♿ Accessibility & UX (Manual Verification)
+- [ ] **Touch Target Audit**: Manually verify that all interactive elements (buttons, nav links, social icons) are at least **48x48px** for mobile users.
+- [ ] **Contrast Ratio Check**: Use the **WAVE** tool or browser dev tools to ensure all text meets the 4.5:1 minimum contrast ratio.
+- [ ] **Focus States**: Tab through the site using a keyboard and verify that `focus-visible` rings are prominent and clear.
 
 ---
 
-## 🏗️ Architecture & Components
-- [x] **Create Shared `Section` Component**: Build a reusable `Section.tsx` in `src/components/ui/` that wraps content in a Tailwind `container mx-auto px-4`.
-- [x] **Refactor `page.tsx`**: Replace hardcoded section containers with the new `Section` component for consistent spacing.
-- [x] **Centralize Social Arrays**: Move the social links currently in `layout.tsx` and `HireMeSection.tsx` into a central configuration file for easier updates.
+## 🛡️ Infrastructure & Cloudflare (Dashboard)
+- [ ] **Verify Bot Fight Mode**: Ensure this is enabled in the Cloudflare dashboard (**Security** -> **Bots**).
+- [ ] **Verify Under Attack Mode**: Familiarize yourself with the toggle location in the WAF dashboard for emergencies.
+- [ ] **HTTPS Enforcement**: Ensure "Always Use HTTPS" and HSTS are enabled in the Cloudflare SSL/TLS settings.
+- [ ] **Speed Settings**: Verify "Auto Minify" (HTML/CSS/JS) and "Rocket Loader" are enabled in the Cloudflare Speed dashboard.
 
 ---
 
-## 🔗 Integrations & Compliance
-- [x] **Footer Backlink**: Add the required `unlimitedoptionsenterprise` backlink to the global footer in `src/app/page.tsx`.
+## 🔗 Integrations & Logic
 - [ ] **Migrate Form Logic**: Refactor `HireMeSection.tsx` to use a custom hook and a **Cloudflare Pages Function** instead of Formspree.
-- [ ] **Install @cloudflare/next-on-pages**: Although using static export, installing this utility ensures better compatibility with Cloudflare-specific features if the project scales.
-
----
-
-## 🛡️ Infrastructure (Dashboard)
-- [ ] **Verify Bot Fight Mode**: Ensure this is enabled in the Cloudflare dashboard.
-- [ ] **Verify Under Attack Mode**: Ensure you know where to toggle this in the dashboard for emergencies.
+- [ ] **GTM Preview Mode**: Open the GTM preview debugger and verify that tags fire correctly on "Launch Mission" and social link clicks.
 
 ---
 
@@ -46,28 +39,20 @@ This list contains the tasks required to bring the current project in full compl
 
 Use the steps and resources below to complete the manual tasks mentioned in the checklists.
 
-### 🖼️ 1. Image Optimization (Manual Asset Cleanup)
-*Goal: Reduce `hero-developer.jpg` from 2.3MB to <200KB.*
-1. **Tool**: Go to [Squoosh.app](https://squoosh.app/) or [TinyPNG](https://tinypng.com/).
-2. **Process**: Upload the JPG. 
-3. **Settings**: Select **AVIF** for the best compression or **WebP** for maximum compatibility.
-4. **Action**: Download the optimized file, rename it back to `hero-developer.avif` (or .webp), and replace the original in `public/`.
-5. **Vite/Next.js Code**: Update the import in `HeroSection.tsx` to point to the new extension.
-
-### 🛡️ 2. Cloudflare Dashboard Settings
+### 🛡️ 1. Cloudflare Dashboard Settings
 *Goal: Enable security and caching standards.*
 1. **Login**: Go to the [Cloudflare Dashboard](https://dash.cloudflare.com/).
 2. **Bot Fight Mode**: 
    - Select your domain -> **Security** -> **Bots**.
    - Toggle **Bot Fight Mode** to **On**.
-3. **Under Attack Mode**: 
-   - Select your domain -> **Security** -> **WAF**.
-   - Note the **Under Attack Mode** toggle on the Overview tab for future use.
-4. **Cache TTL (Secondary Check)**: 
-   - Go to **Caching** -> **Configuration**.
-   - While we set it in `_headers`, verify the **Browser Cache TTL** is set to "Respect Existing Headers" or manually to "1 month."
+3. **HTTPS Enforcement**:
+   - Go to **SSL/TLS** -> **Edge Certificates**.
+   - Enable **Always Use HTTPS** and **HSTS**.
+4. **Auto Minify**:
+   - Go to **Speed** -> **Optimization**.
+   - Check all boxes under **Auto Minify**.
 
-### 📩 3. Form Migration (Cloudflare Pages Functions)
+### 📩 2. Form Migration (Cloudflare Pages Functions)
 *Goal: Move from Formspree to a self-hosted Worker logic.*
 1. **Get API Key**: Create an account at [Resend.com](https://resend.com/) and generate an API Key.
 2. **Set Environment Variable**: 
@@ -75,11 +60,7 @@ Use the steps and resources below to complete the manual tasks mentioned in the 
    - Add `RESEND_API_KEY` with your key.
 3. **Antigravity Action**: Once you have the key, ask Antigravity to: *"Migrate the contact form to Cloudflare Pages Functions using Resend."*
 
-### 💻 4. Terminal Installation
-*Goal: Improve Cloudflare compatibility.*
-1. **Command**: Open your terminal in the project root and run:
-   ```bash
-   npm install @cloudflare/next-on-pages --save-dev
-   ```
-2. **Approval**: Antigravity can run this for you if you say *"Run the installation for @cloudflare/next-on-pages."*
-
+### 🧪 3. Audit Tools
+- **GTmetrix**: [gtmetrix.com](https://gtmetrix.com/)
+- **WAVE**: [wave.webaim.org](https://wave.webaim.org/)
+- **Schema Validator**: [validator.schema.org](https://validator.schema.org/)

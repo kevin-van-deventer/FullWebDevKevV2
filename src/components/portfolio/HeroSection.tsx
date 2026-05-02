@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { Code2, Mail, Rocket, Sparkles } from "lucide-react";
-import heroImg from "@/assets/fwdk_hero_section_background_image.png";
+import heroImg from "@/assets/fwdk_hero_section_background_image.avif";
 import characterImg from "@/assets/fullwebdevkev_cartoon_character_hero_secction_image.svg";
 
 export function HeroSection() {
@@ -38,7 +38,9 @@ export function HeroSection() {
             <Image
               src={characterImg}
               alt="Cartoon Kevin"
-              className="h-full w-auto object-contain object-bottom drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)] md:opacity-100"
+              fill
+              sizes="(max-width: 768px) 50vw, 30vw"
+              className="object-contain object-bottom drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)] md:opacity-100"
               priority
             />
           </motion.div>
