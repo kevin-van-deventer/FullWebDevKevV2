@@ -1,18 +1,35 @@
-# 🔍 SEO & Brand Identity Checklist
+# 🔍 SEO & Content Strategy Standards
 
-- [ ] **Metadata Configuration**: Update the `metadata` object in `src/app/layout.tsx` (title.default, title.template, description, and openGraph).
-- [ ] **Local SEO (JSON-LD)**: Rewrite the `jsonLd` object with the new business Name, Address, Phone (NAP), and geographic coordinates.
-- [ ] **Internal Linking**: Audit the site to ensure sufficient internal links between pages.
-- [ ] **AEO & AI Search Readiness**: Rewrite descriptions for AI assistants and update `public/llms.txt`.
-- [ ] **Sitemap & Robots**: Update `src/app/sitemap.ts` and verify `public/robots.txt`.
-- [ ] **Favicon & Manifest**: Replace all assets in `/public` and update `site.webmanifest`.
-- [ ] **Google Search Console**: Verify the site property and submit the new sitemap.
-- [ ] **Backlink Picking Up**: Verify that all core backlinks (including the footer link) are live and indexable.
-- [ ] **Web Accessibility Audit**: Run the **WAVE Web Accessibility Tool** to ensure compliance.
+This document defines the high-level strategy for content hierarchy and asset management to ensure search and AI engine readiness.
 
-### Performance & SEO Testing Tools (Pre-Launch)
-- [ ] **Google PageSpeed Insights**: Achieve a 90+ score on Mobile and Desktop.
-- [ ] **GTmetrix**: Verify fully loaded time and request counts.
-- [ ] **WebPageTest**: Run a deep audit from a localized server.
-- [ ] **Pingdom Tools**: Check for bottleneck scripts.
-- [ ] **DebugBear**: Monitor Core Web Vitals and site speed trends.
+---
+
+## 📝 The BLUF Method (Bottom Line Up Front)
+Users and AI crawlers should know exactly what a business is within the first 3 seconds.
+
+- [ ] **Core Statement**: The first sentence of the landing page must clearly define the business (e.g., *"Green Valley Kindergarten is a bilingual preschool in District 2..."*).
+- [ ] **Value Prop**: Follow immediately with the primary service or unique selling point.
+
+---
+
+## 🖼️ Asset Optimization (Client-Side)
+To keep build times fast and site weights low, optimize assets *before* they enter the repository.
+
+- [ ] **TinyPNG**: Instruct clients to use TinyPNG before sending images.
+- [ ] **WebP/AVIF Conversion**: Convert all hero images to AVIF primarily, with WebP fallbacks.
+
+---
+
+## 🤖 AEO & AI Readiness
+- [ ] **llms.txt**: Create and maintain `public/llms.txt` to provide a concise summary for AI assistants.
+- [ ] **Schema (JSON-LD)**: 
+    - Use **Product** schema for catalogs (Furniture).
+    - Use **Organization/LocalBusiness** for service sites (Kindergarten).
+- [ ] **AEO Audit**: Periodically ask AI assistants (Gemini, Claude) to summarize the site and verify accuracy.
+
+---
+
+## 🧪 Deep Audit Tools
+- [ ] **GTmetrix**: Target "A" grade with < 1.5s LCP.
+- [ ] **Pingdom**: Check for bottleneck scripts or heavy third-party tags.
+- [ ] **WAVE**: Ensure WCAG compliance for screen readers.
