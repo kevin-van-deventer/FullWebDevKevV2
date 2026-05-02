@@ -12,6 +12,16 @@ Welcome to the definitive guide for building lightning-fast, search-optimized Vi
 
 ---
 
+## 💻 Local Development Setup
+Follow these steps to get the project running on your machine after cloning:
+
+1. **Install Dependencies**: Run `npm install` in the project root.
+2. **Environment Variables**: Copy `.env.example` to `.env` and populate the required keys (e.g., `VITE_GTM_ID`, `VITE_SITE_URL`).
+3. **Launch Dev Server**: Run `npm run dev` to start the local environment at `http://localhost:5173`.
+4. **Production Build**: To test the optimized build, run `npm run build` followed by `npm run preview`.
+
+---
+
 ## 🏗️ 01. Core Architecture (Static/Brochure)
 *Best for: Kindergarten, Personal Portfolio, Company Landing Page.*
 

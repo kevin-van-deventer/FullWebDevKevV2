@@ -12,6 +12,16 @@ Welcome to the definitive guide for building lightning-fast, search-optimized Ne
 
 ---
 
+## 💻 Local Development Setup
+Follow these steps to get the project running on your machine after cloning:
+
+1. **Install Dependencies**: Run `npm install` in the project root.
+2. **Environment Variables**: Copy `.env.example` to `.env.local` and populate the required keys (e.g., `NEXT_PUBLIC_GTM_ID`, `NEXT_PUBLIC_SITE_URL`).
+3. **Launch Dev Server**: Run `npm run dev` to start the local environment at `http://localhost:3000`.
+4. **Production Build**: To test the optimized build, run `npm run build` followed by `npm run start`.
+
+---
+
 ## 🏗️ 01. Core Architecture (Dynamic/SEO-Heavy)
 *Best for: Furniture Shop (Product catalogs), Blog-style Company sites.*
 
